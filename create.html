@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Aussie Hackathons</title>
+
+</head>
+<header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <a href="index.html" " class=" navbar-brand mb-0 h1">
+                <img class="d-inline-block align-top" src="img/favicon.png" width="45" height="45">
+                <a class="navbar-brand h1 pt-2" href="index.html">Aussie Hackathons</a>
+            </a>
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="create.html" class="nav-link active">
+                            Create Event
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking.html" class="nav-link">
+                            About
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="navbar navbar-nav-right my-1">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" id="accountDropdown" role="button" data-bs-toggle="dropdown">
+                            <button class="btn  btn-outline-info navbar-btn">Account ↓</button>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html" class="dropdown-item">Login</a></li>
+                            <li><a href="index.html" class="dropdown-item">Register</a></li>
+                            <li><a href="history.html" class="dropdown-item">Booking History</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar Finished -->
+</header>
+<!-- Main Body Section -->
+
+<body style="height:2000px; background-color:#383838"></body>
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container py-5 " align="center">
+        <h1 style="color:black; font-family:verdana; font-weight: bold;">Event Creation</h1>
+    </div>
+</div>
+<div class="container" align="center">
+    <form>
+        <div class="row">
+            <div class="col-auto">
+                <br>
+                <h2>Event Name</h2>
+                <input type="text" id="formItem" class="form-control" style="width:500px;"
+                    placeholder="e.g. Atlantic Coding Comp">
+            </div>
+            <div class="col-3"></div>
+            <div class="col-auto">
+                <br>
+                <h2>Image Upload</h2>
+                <input class="form-control" id="formFileLg" type="file">
+            </div>
+        </div>
+        <div class="row gy-5">
+            <div class="p-3"></div>
+            <h3>Description</h3>
+
+            <textarea class="form-control" id="" rows="9" style="width:40%; margin: 0 auto;"></textarea>
+        </div>
+
+        <div class="row">
+            <br>
+            <div></div>
+            <h3>Select Date of Event</h3>
+            <div class="col-auto mx-auto">
+
+                <label for="start" style="color:white; font-size:larger; ">Start Date:</label>
+                <input type="date" id="start" name="trip-start">
+            </div>
+            <div class="col-auto mx-auto">
+
+                <label for="start" style="color:white; font-size:larger; ">End Date:</label>
+                <input type="date" id="start" name="trip-start">
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary btn-lg mt-5" type="button">Create Event</button>
+
+    </form>
+</div>
+
+
+
+<!-- Javascript compnent required for Bootstrap Framework -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
