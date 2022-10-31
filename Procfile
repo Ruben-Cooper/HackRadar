@@ -1,1 +1,1 @@
-web gnuicord 'hackathon:create_app()'
+web: gunicorn 'hackathon:create_app()'
