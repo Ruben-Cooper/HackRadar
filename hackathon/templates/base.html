@@ -12,15 +12,11 @@
 </head>
 
 <body>
-    {% block header %}
-    {% endblock %}
     <!-- Header -->
     <header>
-
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
-
                 <a href="index.html" class=" navbar-brand mb-0 h1">
                     <img class="d-inline-block align-top" src="img/favicon.png" width="45" height="45">
                     <a class="navbar-brand h1 pt-2" href="index.html">Aussie Hackathons</a>
@@ -65,7 +61,8 @@
             </div>
         </nav>
         <!-- Navigation Bar Finished -->
-
+        {% block header %}
+        {% endblock %}
 
     </header>
 
