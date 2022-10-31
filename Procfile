@@ -1,0 +1,1 @@
+web gnuicord 'hackathon:create_app()'
