@@ -1,8 +1,10 @@
-from flask import Blueprint
+from flask import Blueprint, request, render_template
 
 bp = Blueprint('main', __name__)
 
 
 @bp.route('/')
 def index():
-    return '<h1>Hackathon<h1>'
+    print(request.headers)
+    print(request.args.get('name'))
+    return render_template('base.html')
