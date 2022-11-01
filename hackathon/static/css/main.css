@@ -1,6 +1,26 @@
+/*--------------------------------------------------*/
+/*                    Nav bar                       */
+/*--------------------------------------------------*/
+
 .navbar-nav-right {
     margin-left: auto;
 }
+
+.navbar-item {
+    border-radius: 5px;
+}
+
+.nav-item a:hover {
+    background-color: #da8300;
+    color: white;
+    border-radius: 5px;
+}
+
+
+
+/*--------------------------------------------------*/
+/*                       Body                       */
+/*--------------------------------------------------*/
 
 body {
     padding-top: 70px;
@@ -37,7 +57,12 @@ h3 {
     padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+
+
+/*--------------------------------------------------*/
+/*             Create four equal columns            */
+/*            that sits next to each other          */
+/*--------------------------------------------------*/
 .image-column {
     flex: 25%;
     max-width: 50%;
@@ -93,6 +118,9 @@ h3 {
 #title {
     color: black;
 }
+
+
+
 /*--------------------------------------------------*/
 /*                Booking History                   */
 /*--------------------------------------------------*/
@@ -152,7 +180,11 @@ h3 {
     color: white;
 }
 
-/* The CSS for Register Page */
+
+
+/*--------------------------------------------------*/
+/*                Registration Page                 */
+/*--------------------------------------------------*/
 #register{
     max-width: 75%;
     background-color: #5c5c5c;
@@ -228,11 +260,9 @@ div.form-group{
 
 
 
-
-
-
-
-/* The CSS for Sign In */
+/*--------------------------------------------------*/
+/*                   Sign In Page                   */
+/*--------------------------------------------------*/
 #signin{
     max-width: 75%;
     background-color: #5c5c5c;
