@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+{% extends "header.html"%}
+{% block header %}
+
+<body>
+    <img class="bg" src="../static/img/brisbane-local-marketing-nHiPAtsZcCo-unsplash.jpg">
+    <div class="overlay">
+        <br> <br> <br> <br> <br> <br> <br> 
+
+        <!-- Booking History -->
+        <div class="container" id="booking_history">
+            <br>
+                <h2 style="text-align: center">Booking History</h2>
+                <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr id="booking_table_titles">
+                                <th scope="col"></th>
+                                <th scope="col">Event Name</th>
+                                <th scope="col">Date Booked</th>
+                                <th scope="col">Booking ID</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+</html>

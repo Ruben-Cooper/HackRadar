@@ -33,3 +33,7 @@ def login():
     if loginform.validate_on_submit():
         print(f"Username: {loginform.loginusername.data}, Password: {loginform.loginpassword.data}")
     return render_template('SignIn.html', form=loginform)
+
+@bp.route('/booking_history')
+def booking_history():
+    return render_template('booking_history.html')

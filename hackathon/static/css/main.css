@@ -93,6 +93,22 @@ h3 {
 #title {
     color: black;
 }
+/*--------------------------------------------------*/
+/*                Booking History                   */
+/*--------------------------------------------------*/
+#booking_history {
+    max-width: 75%;
+    background-color: #5c5c5c;
+    border-radius: 5px;
+    max-width: 900px;
+}
+
+#booking_table_titles
+{
+    border-bottom: #da8300 1.5px solid;
+}
+
+
 
 /*--------------------------------------------------*/
 /*                 Create Events Page               */
