@@ -116,6 +116,41 @@ h3 {
     float: left;
 }
 
+/* The CSS for Register Page */
+#register{
+    max-width: 75%;
+    background-color: #5c5c5c;
+    border-radius: 5px;
+  }
+
+#register .form-control{
+    background-color: #383838;
+    border: 1px solid #383838;
+    border-radius: 5px;
+}
+
+#register ::placeholder{
+    color: #ffffff;
+    text-align: left;
+    opacity: 50%;
+    font-size: small;
+}
+
+#register a{
+    color: #fffffffb;
+}
+
+#register .btn btn-dark{
+    background-color: #383838;
+    border: 1px solid #383838;
+    border-radius: 5px;
+}
+
+
+
+
+
+
 
 
 
