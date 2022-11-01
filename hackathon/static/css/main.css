@@ -216,7 +216,55 @@ div.form-group{
 
 
 
+/* The CSS for Sign In */
+#signin{
+    max-width: 75%;
+    background-color: #5c5c5c;
+    border-radius: 5px;
+    max-width: 800px;
+  }
 
+
+#signin .form-control{
+    background-color: #383838;
+    border: 1px solid #383838;
+    border-radius: 5px;
+}
+
+#signin .form-control:focus {
+    border-color: #da8300;
+    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
+}
+
+#signin ::placeholder{
+    color: #ffffff;
+    text-align: left;
+    opacity: 50%;
+    font-size: small;
+}
+
+#signin a{
+    color: #ffffffff;
+}
+
+#signin .create-btn{
+    background-color: #5c5c5c;
+    color: #da8300;
+    border: 1px solid #da8300;
+    padding: 7px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#signin .create-btn:hover{
+    background-color: #da8300;
+    color: #5c5c5c;
+}
+
+#signin .form-control:focus {
+    border-color: #da8300;
+    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
+}
 
 
 
