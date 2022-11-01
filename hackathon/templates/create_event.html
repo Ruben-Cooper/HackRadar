@@ -4,102 +4,107 @@
 {% block header %}
 
 <body>
-    <!--Event Creation-->
-    <div class="container" id="create_event">
-        <br>
-        <h2 style="text-align: center">Create Event</h2>
-        <form method="POST" action="{{ url_for('main.create_event') }}">
-            {{ form.csrf_token }}
 
-            <!-- Event Name -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_name.label}}
-                        {{form.event_name(class="form-control", placeholder ="Enter Event Name")}}
-                    </div> 
-                </div>
-            </div> <br>
+    <img class="bg" src="https://images.unsplash.com/photo-1582555844450-9d8572f65704?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80">
+    <div class="overlay">
+        <br> <br> <br> <br> <br> <br> <br>
+        <!--Event Creation-->
+        <div class="container" id="create_event">
+            <br>
+            <h2 style="text-align: center">Create Event</h2>
+            <form method="POST" action="{{ url_for('main.create_event') }}">
+                {{ form.csrf_token }}
 
-            <!-- Event Description -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_description.label}}
-                        {{form.event_description(class="form-control", placeholder ="Enter Event Description")}}
-                    </div> 
-                </div>
-            </div> <br>
-
-            <!-- Event Date -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_date.label}}
-                        {{form.event_date(class="form-control")}}
-                    </div> 
-                </div>
-            </div> <br>
-
-            <!-- Event Image -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_image.label}}
-                        {{form.event_image(class="form-control")}}
+                <!-- Event Name -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_name.label}}
+                            {{form.event_name(class="form-control", placeholder ="Enter Event Name")}}
+                        </div> 
                     </div>
-                </div>
-            </div> <br>
+                </div> <br>
 
-            <!-- Event Location -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_location.label}}
-                        {{form.event_location(class="form-control", placeholder ="Enter Event Location")}}
+                <!-- Event Description -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_description.label}}
+                            {{form.event_description(class="form-control", placeholder ="Enter Event Description")}}
+                        </div> 
                     </div>
-                </div>
-            </div> <br>
+                </div> <br>
 
-            <!-- Ticket Quantity -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.ticket_quantity.label}}
-                        {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity")}}
+                <!-- Event Date -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_date.label}}
+                            {{form.event_date(class="form-control")}}
+                        </div> 
                     </div>
-                </div>
-            </div> <br>
+                </div> <br>
 
-            <!-- Ticket Price -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.ticket_price.label}}
-                        {{form.ticket_price(class="form-control", placeholder ="Enter Ticket Price")}}
+                <!-- Event Image -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_image.label}}
+                            {{form.event_image(class="form-control")}}
+                        </div>
                     </div>
-                </div>
-            </div> <br>
+                </div> <br>
 
-            <!-- Select Category from list -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{form.event_category.label}}
-                        {{form.event_category(class="form-control")}}
+                <!-- Event Location -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_location.label}}
+                            {{form.event_location(class="form-control", placeholder ="Enter Event Location")}}
+                        </div>
                     </div>
-                </div>
-            </div> <br>
+                </div> <br>
 
-            <!-- Create Button -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        {{ form.submit (class="btn btn-primary create-btn") }}
+                <!-- Ticket Quantity -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.ticket_quantity.label}}
+                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity")}}
+                        </div>
                     </div>
-                </div>
-            </div> <br>
-        </form>
+                </div> <br>
+
+                <!-- Ticket Price -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.ticket_price.label}}
+                            {{form.ticket_price(class="form-control", placeholder ="Enter Ticket Price")}}
+                        </div>
+                    </div>
+                </div> <br>
+
+                <!-- Select Category from list -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.event_category.label}}
+                            {{form.event_category(class="form-control")}}
+                        </div>
+                    </div>
+                </div> <br>
+
+                <!-- Create Button -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.submit (class="btn btn-primary create-btn") }}
+                        </div>
+                    </div>
+                </div> <br>
+            </form>
+        </div>
     </div>
 
     
