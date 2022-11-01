@@ -15,7 +15,10 @@ def index():
     
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')\
+    regform = RegisterForm()
+    if regform.validate_on_submit():
+        print(f"Username: {regform.user_name.data}, Email: {regform.email_id.data}, Password: {regform.password.data}, Contact Number: {regform.contact_number.data}, Address: {regform.address.data}")
+    return render_template('register.html', form=regform)
 
 @bp.route('/create_event')
 def create_event():
