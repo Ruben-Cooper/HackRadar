@@ -12,3 +12,7 @@ def index():
 @bp.route('/register')
 def register():
     return render_template('register.html')
+
+@bp.route('/create_event')
+def create_event():
+    return render_template('create_event.html')
