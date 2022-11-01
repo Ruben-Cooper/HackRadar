@@ -246,7 +246,7 @@ img.bg{
 
 #register .create-btn:hover{
     background-color: #da8300;
-    color: #5c5c5c;
+    color: white;
 }
 
 div.form-group{
@@ -304,7 +304,7 @@ div.form-group{
 
 #signin .create-btn:hover{
     background-color: #da8300;
-    color: #5c5c5c;
+    color: white;
 }
 
 #signin .form-control:focus {
