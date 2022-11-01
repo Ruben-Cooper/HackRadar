@@ -94,8 +94,27 @@ h3 {
     color: black;
 }
 
+/*--------------------------------------------------*/
+/*                 Create Events Page               */
+/*--------------------------------------------------*/
 
+.event-creation{
+    margin-top: 56px;
+}
 
+.event-creation .btn-view{
+    background-color: white;
+    color: #0d6efd;
+}
+
+.event-creation .btn-view:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.event-creation input::placeholder{
+    float: left;
+}
 
 /* The CSS for Register Page */
 #register{
