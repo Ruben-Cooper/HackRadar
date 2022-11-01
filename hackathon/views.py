@@ -8,3 +8,7 @@ def index():
     print(request.headers)
     print(request.args.get('name'))
     return render_template('base.html')
+    
+@bp.route('/register')
+def register():
+    return render_template('register.html')
