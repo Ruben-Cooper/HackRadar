@@ -5,34 +5,42 @@ from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+
 db = SQLAlchemy()
+
+# this is the name of the module/package that is calling this app
 app = Flask(__name__)
 app.debug = True
-
+# set the app configuration data
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # to supress warning
+# initialize db with flask app
 db.init_app(app)
 
 bootstrap = Bootstrap5(app)
 
+
 class User(db.Model):
     __tablename__ = 'usercredentials'
-    user_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    phone = db.Column(db.String(9), nullable=False)
+    phone = db.Column(db.String(10), nullable=False)
     address = db.Column(db.String(100), nullable=False)
+    comments = db.relationship('Comment', backref='user', lazy='dynamic')
+    booking = db.relationship('Booking', backref='user', lazy='dynamic')
 
 
 class Event(db.Model):
     __tablename__ = 'eventdetails'
-    event_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     event_creator = db.Column(db.String(100), nullable=False)
     event_name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
-    date = db.Column(db.DateTime.date, nullable=False)
-    time = db.Column(db.DateTime.time, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    time = db.Column(db.DateTime, nullable=False)
     online = db.Column(db.Boolean, nullable=False)
     location = db.Column(db.String(200), nullable=False)
     event_type = db.Column(db.String(50), nullable=False)
@@ -41,22 +49,29 @@ class Event(db.Model):
     image = db.Column(db.String(200), nullable=False, default='default.jpg')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
+
 class Booking(db.Model):
     __tablename__ = 'bookingdetails'
-    booking_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     tickets = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    date = db.Column(db.DateTime.date, db.ForeignKey('event.id'), nullable=False)
-    time = db.Column(db.DateTime.time, db.ForeignKey('event.id'), nullable=False)
+    date = db.Column(db.DateTime, db.ForeignKey(
+        'event.id'), nullable=False)
+    time = db.Column(db.DateTime, db.ForeignKey(
+        'event.id'), nullable=False)
+
 
 class Comment(db.Model):
     __tablename__ = 'commentdetails'
-    comment_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    username = db.Column(db.String(100), db.ForeignKey('user.id'), nullable=False)
+    username = db.Column(
+        db.String(100), db.ForeignKey('user.id'), nullable=False)
     comment = db.Column(db.String(200), nullable=False)
-    date = db.Column(db.DateTime.date, db.ForeignKey('event.id'), nullable=False)
-    time = db.Column(db.DateTime.time, db.ForeignKey('event.id'), nullable=False)
+    date = db.Column(db.DateTime, db.ForeignKey(
+        'event.id'), nullable=False)
+    time = db.Column(db.DateTime, db.ForeignKey(
+        'event.id'), nullable=False)
