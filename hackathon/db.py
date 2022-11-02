@@ -32,6 +32,7 @@ class Event(db.Model):
     description = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime.date, nullable=False)
     time = db.Column(db.DateTime.time, nullable=False)
+    online = db.Column(db.Boolean, nullable=False)
     location = db.Column(db.String(200), nullable=False)
     event_type = db.Column(db.String(50), nullable=False)
     event_status = db.Column(db.String(50), nullable=False)
