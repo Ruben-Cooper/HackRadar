@@ -1,6 +1,7 @@
 from logging import PlaceHolder
 from flask import Blueprint, request, render_template
 from .forms import RegisterForm, CreateEventForm, LoginForm
+from flask import Flask, render_template, request, redirect, url_for
 
 
 bp = Blueprint('main', __name__)
