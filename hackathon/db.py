@@ -24,13 +24,12 @@ class User(db.Model):
     __tablename__ = 'usercredentials'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     phone = db.Column(db.String(10), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     comments = db.relationship('Comment', backref='user', lazy='dynamic')
-    booking = db.relationship('Booking', backref='user', lazy='dynamic')
+    bookings = db.relationship('Booking', backref='user', lazy='dynamic')
 
 
 class Event(db.Model):
@@ -48,6 +47,7 @@ class Event(db.Model):
     tickets = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(200), nullable=False, default='default.jpg')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    comments = db.relationship('Comment', backref='user', lazy='dynamic')
 
 
 class Booking(db.Model):
