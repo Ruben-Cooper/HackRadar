@@ -6,18 +6,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 
-db = SQLAlchemy()
 
 # this is the name of the module/package that is calling this app
 app = Flask(__name__)
 app.debug = True
 # set the app configuration data
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hackathon.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # to supress warning
 # initialize db with flask app
-db.init_app(app)
 
-bootstrap = Bootstrap5(app)
+
+db = SQLAlchemy()
+
+
 
 
 class User(db.Model):

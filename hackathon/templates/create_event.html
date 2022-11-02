@@ -70,7 +70,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             {{form.ticket_quantity.label}}
-                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity")}}
+                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity", min="1")}}
                         </div>
                     </div>
                 </div> <br>
@@ -80,7 +80,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             {{form.ticket_price.label}}
-                            {{form.ticket_price(class="form-control", placeholder ="Enter Ticket Price")}}
+                            {{form.ticket_price(class="form-control", placeholder ="Enter Ticket Price", min="1")}}
                         </div>
                     </div>
                 </div> <br>

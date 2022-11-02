@@ -4,13 +4,15 @@ from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-db = SQLAlchemy()
+
+
 
 # create a function that creates a web application
 # a web server will run this web application
 
 
 def create_app():
+
 
     # this is the name of the module/package that is calling this app
     app = Flask(__name__)
@@ -46,5 +48,7 @@ def create_app():
 
     # from . import auth
     # app.register_blueprint(auth.bp)
-
     return app
+    
+
+
