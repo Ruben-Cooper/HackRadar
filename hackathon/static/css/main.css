@@ -5,6 +5,9 @@
 .navbar-nav-right {
     margin-left: auto;
 }
+.navbar-nav a{
+    color: white;
+}
 
 .navbar-item {
     border-radius: 5px;
