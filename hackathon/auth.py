@@ -12,7 +12,7 @@ from . import db
 bp = Blueprint('auth', __name__)
 
 
-# this is the hint for a login function
+
 # @bp.route('/login', methods=['GET', 'POST'])
 # def authenticate(): #view function
 #     print('In Login View function')

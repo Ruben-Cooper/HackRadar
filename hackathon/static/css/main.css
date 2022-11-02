@@ -198,9 +198,10 @@ img.bg{
 
     width: 100%;
     height: auto;
+
     position: fixed;
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 
 .overlay {
