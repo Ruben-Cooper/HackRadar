@@ -29,7 +29,6 @@ class Event(db.Model):
     event_id = db.Column(db.Integer, primary_key=True)
     event_creator = db.Column(db.String(100), nullable=False)
     event_name = db.Column(db.String(100), nullable=False)
-    artist = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime.date, nullable=False)
     time = db.Column(db.DateTime.time, nullable=False)
