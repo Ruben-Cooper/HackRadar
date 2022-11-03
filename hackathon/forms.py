@@ -6,6 +6,8 @@ from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 categories = [('Business Case Competition'), ('Business Proposals'), ('Coding Competition'),
               ('Datathon'), ('Hackathon'), ('Idea Pitch'), ('Robotics'), ('Seminars')]
+status_categories = [('Unpublished'), ('Open'), ('Sold-out'), ('Cancelled')]
+online_categories = [('Yes'), ('No')]
 
 # creates the login information
 
@@ -56,4 +58,7 @@ class CreateEventForm(FlaskForm):
                                 InputRequired("Please Enter Ticket Price")])
     event_category = SelectField("Event Category", validators=[
                                  InputRequired("Please Enter Event Category")], choices=categories)
+    event_status = SelectField("Event Status", validators=[ 
+                                 InputRequired("Please Enter Event Status")], choices=status_categories)
+    online_event = SelectField("Online Event", choices=online_categories,)
     submit = SubmitField("Create Event")

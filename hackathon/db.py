@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 
-
+db = SQLAlchemy()
 # this is the name of the module/package that is calling this app
 app = Flask(__name__)
 app.debug = True
@@ -15,8 +15,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hackathon.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # to supress warning
 # initialize db with flask app
 
-
-db = SQLAlchemy()
 
 
 
@@ -46,6 +44,7 @@ class Event(db.Model):
     event_type = db.Column(db.String(50), nullable=False)
     event_status = db.Column(db.String(50), nullable=False)
     tickets = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(200), nullable=False, default='default.jpg')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     comments = db.relationship('Comment', backref='user', lazy='dynamic')
