@@ -34,15 +34,15 @@ def create_event():
     if createform.validate_on_submit():
         print(f"Event Name: {createform.event_name.data}, Event Description: {createform.event_description.data}, Event Date: {createform.event_date.data}, Event Image: {createform.event_image.data}, Event Location: {createform.event_location.data}, Ticket Quantity: {createform.ticket_quantity.data}, Ticket Price: {createform.ticket_price.data}, Event Category: {createform.event_category.data}")
         event = Event(event_name=createform.event_name.data,
-                      event_description=createform.event_description.data,
-                      event_date=createform.event_date.data,
+                      description=createform.event_description.data,
+                      date=createform.event_date.data,
+                      image=createform.event_image.data,
                       online=createform.online_event.data,
-                      event_location=createform.event_location.data,
-                      event_category=createform.event_category.data,
+                      location=createform.event_location.data,
+                      category=createform.event_category.data,
                       status = createform.event_status.data,
-                      ticket_quantity=createform.ticket_quantity.data,
-                      ticket_price=createform.ticket_price.data, 
-                      event_image=createform.event_image.data,)
+                      ticket_amt=createform.ticket_quantity.data,
+                      price=createform.ticket_price.data)
         db.session.add(event)
         db.session.commit()
 
