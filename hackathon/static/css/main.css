@@ -27,7 +27,13 @@
     border-radius: 5px;
 }
 
+.navbar .dropdown-menu{
+    background-color: #212529;
+    border-radius: 5px;
+}
+
 .navbar .dropdown-menu a:hover {
+    max-width: 94%;
     background-color: #da8300;
     color: white;
     border-radius: 5px;
@@ -141,14 +147,20 @@ h3 {
 /*--------------------------------------------------*/
 #booking_history {
     max-width: 75%;
-    background-color: #5c5c5c;
+    background-color: #454a4f;
     border-radius: 5px;
     max-width: 900px;
 }
 
 #booking_table_titles
 {
+    color: white;
     border-bottom: #da8300 1.5px solid;
+}
+
+#booking_history table td
+{
+    color: white;
 }
 
 
@@ -158,12 +170,13 @@ h3 {
 /*--------------------------------------------------*/
 #create_event {
     max-width: 75%;
-    background-color: #5c5c5c;
+    background-color: #454a4f;
     border-radius: 5px;
     max-width: 900px;
   }
 
 #create_event .form-control{
+    color: white;
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -182,7 +195,7 @@ h3 {
 }
 
 #create_event .create-btn{
-    background-color: #5c5c5c;
+    background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
     padding: 7px;
@@ -202,7 +215,7 @@ h3 {
 /*--------------------------------------------------*/
 #register{
     max-width: 75%;
-    background-color: #5c5c5c;
+    background-color: #454a4f;
     border-radius: 5px;
     max-width: 900px;
   }
@@ -228,8 +241,8 @@ img.bg{
 
 }
 
-
 #register .form-control{
+    color: white;
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -253,7 +266,7 @@ img.bg{
 
 
 #register .create-btn{
-    background-color: #5c5c5c;
+    background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
     padding: 7px;
@@ -282,13 +295,14 @@ div.form-group{
 /*--------------------------------------------------*/
 #signin{
     max-width: 75%;
-    background-color: #5c5c5c;
+    background-color: #454a4f;
     border-radius: 5px;
     max-width: 800px;
   }
 
 
 #signin .form-control{
+    color: white;
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -311,7 +325,7 @@ div.form-group{
 }
 
 #signin .create-btn{
-    background-color: #5c5c5c;
+    background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
     padding: 7px;
@@ -337,7 +351,7 @@ div.form-group{
 }
 
 #event .create-btn{
-    background-color: #5c5c5c;
+    background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
     padding: 7px;
