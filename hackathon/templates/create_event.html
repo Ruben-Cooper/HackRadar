@@ -5,7 +5,8 @@
 
 <body>
 
-    <img class="bg" src="https://images.unsplash.com/photo-1582555844450-9d8572f65704?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80">
+    <img class="bg"
+        src="https://images.unsplash.com/photo-1582555844450-9d8572f65704?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80">
     <div class="overlay">
         <br> <br> <br> <br> <br> <br> <br>
         <!--Event Creation-->
@@ -21,7 +22,7 @@
                         <div class="form-group">
                             {{form.event_name.label}}
                             {{form.event_name(class="form-control", placeholder ="Enter Event Name")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -31,7 +32,7 @@
                         <div class="form-group">
                             {{form.event_description.label}}
                             {{form.event_description(class="form-control", placeholder ="Enter Event Description")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -41,7 +42,7 @@
                         <div class="form-group">
                             {{form.event_date.label}}
                             {{form.event_date(class="form-control")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -70,7 +71,8 @@
                     <div class="col-12">
                         <div class="form-group">
                             {{form.ticket_quantity.label}}
-                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity", min="1")}}
+                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity",
+                            min="1")}}
                         </div>
                     </div>
                 </div> <br>
@@ -94,7 +96,7 @@
                         </div>
                     </div>
                 </div> <br>
-                
+
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
@@ -124,4 +126,5 @@
 </body>
 
 {% endblock %}
+
 </html>

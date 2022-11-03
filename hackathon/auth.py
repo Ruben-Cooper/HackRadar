@@ -27,10 +27,11 @@ def register():
 def login():
     loginform = LoginForm(csrf_enabled=False)
     if (loginform.validate_on_submit):
-        user = User.query.filter_by(username=loginform.username.data).first()
+        user = User.query.filter_by(
+            username=loginform.loginusername.data).first()
         # If username exists and then tests password
-        if user and user.check_password(loginform.password.data):
-            login_user(user, remember=loginform.rememberme.data)
+        if user and user.check_password(loginform.loginpassword.data):
+            login_user(user)
 
         return render_template('SignIn.html', form=loginform)
 
