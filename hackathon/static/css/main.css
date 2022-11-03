@@ -317,14 +317,39 @@ div.form-group{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
+/*--------------------------------------------------*/
+/*                   View Events                    */
+/*--------------------------------------------------*/
+#event .container{
+    text-align: "center";
+}
 
+#event .create-btn{
+    background-color: #5c5c5c;
+    color: #da8300;
+    border: 1px solid #da8300;
+    padding: 7px;
+    width: 200px;
+    border-radius: 5px;
+}
 
+#event .create-btn:hover{
+    background-color: #da8300;
+    color: white;
+}
 
+#event .form-control:focus {
+    border-color: #da8300;
+    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
+}
 
+#event .fw-bold{
+    color: #000000;
+}
 
-
-
-
+#event h3{
+    color: #000000;
+}
 
 
 

@@ -62,3 +62,7 @@ def login():
 @bp.route('/booking_history')
 def booking_history():
     return render_template('booking_history.html')
+
+@bp.route('/event/')
+def event_details():
+    return render_template('view_event.html')
