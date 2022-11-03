@@ -58,7 +58,7 @@ class CreateEventForm(FlaskForm):
                                 InputRequired("Please Enter Ticket Price")])
     event_category = SelectField("Event Category", validators=[
                                  InputRequired("Please Enter Event Category")], choices=categories)
-    event_status = SelectField("Event Status", validators=[ 
-                                 InputRequired("Please Enter Event Status")], choices=status_categories)
+    event_status = SelectField("Event Status", validators=[
+        InputRequired("Please Enter Event Status")], choices=status_categories)
     online_event = SelectField("Online Event", choices=online_categories)
     submit = SubmitField("Create Event")

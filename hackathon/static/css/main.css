@@ -5,7 +5,8 @@
 .navbar-nav-right {
     margin-left: auto;
 }
-.navbar-nav a{
+
+.navbar-nav a {
     color: white;
 }
 
@@ -134,8 +135,7 @@ h3 {
     max-width: 900px;
 }
 
-#booking_table_titles
-{
+#booking_table_titles {
     border-bottom: #da8300 1.5px solid;
 }
 
@@ -149,9 +149,9 @@ h3 {
     background-color: #5c5c5c;
     border-radius: 5px;
     max-width: 900px;
-  }
+}
 
-#create_event .form-control{
+#create_event .form-control {
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -162,14 +162,14 @@ h3 {
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
-#create_event ::placeholder{
+#create_event ::placeholder {
     color: #ffffff;
     text-align: left;
     opacity: 50%;
     font-size: small;
 }
 
-#create_event .create-btn{
+#create_event .create-btn {
     background-color: #5c5c5c;
     color: #da8300;
     border: 1px solid #da8300;
@@ -178,7 +178,7 @@ h3 {
     border-radius: 5px;
 }
 
-#create_event .create-btn:hover{
+#create_event .create-btn:hover {
     background-color: #da8300;
     color: white;
 }
@@ -188,14 +188,14 @@ h3 {
 /*--------------------------------------------------*/
 /*                Registration Page                 */
 /*--------------------------------------------------*/
-#register{
+#register {
     max-width: 75%;
     background-color: #5c5c5c;
     border-radius: 5px;
     max-width: 900px;
-  }
+}
 
-img.bg{
+img.bg {
     min-height: 100%;
     min-width: 1024px;
 
@@ -217,7 +217,7 @@ img.bg{
 }
 
 
-#register .form-control{
+#register .form-control {
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -228,19 +228,19 @@ img.bg{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
-#register ::placeholder{
+#register ::placeholder {
     color: #ffffff;
     text-align: left;
     opacity: 50%;
     font-size: small;
 }
 
-#register a{
+#register a {
     color: #ffffffff;
 }
 
 
-#register .create-btn{
+#register .create-btn {
     background-color: #5c5c5c;
     color: #da8300;
     border: 1px solid #da8300;
@@ -249,12 +249,12 @@ img.bg{
     border-radius: 5px;
 }
 
-#register .create-btn:hover{
+#register .create-btn:hover {
     background-color: #da8300;
     color: white;
 }
 
-div.form-group{
+div.form-group {
     color: #dbdbdb;
 }
 
@@ -268,15 +268,15 @@ div.form-group{
 /*--------------------------------------------------*/
 /*                   Sign In Page                   */
 /*--------------------------------------------------*/
-#signin{
+#signin {
     max-width: 75%;
     background-color: #5c5c5c;
     border-radius: 5px;
     max-width: 800px;
-  }
+}
 
 
-#signin .form-control{
+#signin .form-control {
     background-color: #383838;
     border: 1px solid #383838;
     border-radius: 5px;
@@ -287,18 +287,18 @@ div.form-group{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
-#signin ::placeholder{
+#signin ::placeholder {
     color: #ffffff;
     text-align: left;
     opacity: 50%;
     font-size: small;
 }
 
-#signin a{
+#signin a {
     color: #ffffffff;
 }
 
-#signin .create-btn{
+#signin .create-btn {
     background-color: #5c5c5c;
     color: #da8300;
     border: 1px solid #da8300;
@@ -307,7 +307,7 @@ div.form-group{
     border-radius: 5px;
 }
 
-#signin .create-btn:hover{
+#signin .create-btn:hover {
     background-color: #da8300;
     color: white;
 }
@@ -320,11 +320,11 @@ div.form-group{
 /*--------------------------------------------------*/
 /*                   View Events                    */
 /*--------------------------------------------------*/
-#event .container{
+#event .container {
     text-align: "center";
 }
 
-#event .create-btn{
+#event .create-btn {
     background-color: #5c5c5c;
     color: #da8300;
     border: 1px solid #da8300;
@@ -333,7 +333,7 @@ div.form-group{
     border-radius: 5px;
 }
 
-#event .create-btn:hover{
+#event .create-btn:hover {
     background-color: #da8300;
     color: white;
 }
@@ -343,11 +343,11 @@ div.form-group{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
-#event .fw-bold{
+#event .fw-bold {
     color: #000000;
 }
 
-#event h3{
+#event h3 {
     color: #000000;
 }
 
