@@ -27,6 +27,22 @@
     border-radius: 5px;
 }
 
+.navbar .navbar-btn{
+    background-color: transparent;
+    color: #3988ff;
+    border: 1px solid #3988ff;
+    padding: 7px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar .navbar-btn:hover{
+    color: white;
+    background-color: #3988ff;
+    border-radius: 5px;
+    transition: 0.25s ease;
+}
+
 .navbar .dropdown-menu{
     background-color: #212529;
     border-radius: 5px;
@@ -168,7 +184,7 @@ h3 {
 /*--------------------------------------------------*/
 /*                 Create Events Page               */
 /*--------------------------------------------------*/
-#create_event {
+#create_event{
     max-width: 75%;
     background-color: #454a4f;
     border-radius: 5px;
@@ -248,11 +264,6 @@ img.bg{
     border-radius: 5px;
 }
 
-#register .form-control:focus {
-    border-color: #da8300;
-    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
-}
-
 #register ::placeholder{
     color: #ffffff;
     text-align: left;
@@ -308,11 +319,6 @@ div.form-group{
     border-radius: 5px;
 }
 
-#signin .form-control:focus {
-    border-color: #da8300;
-    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
-}
-
 #signin ::placeholder{
     color: #ffffff;
     text-align: left;
@@ -343,14 +349,28 @@ div.form-group{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
+
+
 /*--------------------------------------------------*/
 /*                   View Events                    */
 /*--------------------------------------------------*/
-#event .container{
-    text-align: "center";
+#event {
+    max-width: 75%;
+    background-color: #454a4f;
+    border-radius: 5px;
+    max-width: 900px;
 }
 
-#event .create-btn{
+#event .event-info-section{
+    text-align: center;
+    color: white;
+}
+
+#event strong{
+    text-decoration: underline;
+}
+
+#event .book-btn{
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
@@ -359,7 +379,7 @@ div.form-group{
     border-radius: 5px;
 }
 
-#event .create-btn:hover{
+#event .book-btn:hover{
     background-color: #da8300;
     color: white;
 }
@@ -369,16 +389,21 @@ div.form-group{
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
+#event .form-control:focus {
+    border-color: #da8300;
+    box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
+}
+
 #event .fw-bold{
-    color: #000000;
+    color: White;
 }
 
-#event h3{
-    color: #000000;
+#event-comments{
+    max-width: 75%;
+    background-color: #454a4f;
+    border-radius: 5px;
+    max-width: 900px;
 }
-
-
-
 
 
 
