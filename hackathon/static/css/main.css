@@ -5,21 +5,33 @@
 .navbar-nav-right {
     margin-left: auto;
 }
-.navbar-nav a{
+
+.navbar ul li a{
+    display: block;
     color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.navbar-item {
+.navbar-nav a .active{
+    background-color: #da8300;
     border-radius: 5px;
 }
 
-.nav-item a:hover {
+.navbar-nav a:hover {
     background-color: #da8300;
     color: white;
     border-radius: 5px;
 }
 
-
+.navbar .dropdown-menu a:hover {
+    background-color: #da8300;
+    color: white;
+    border-radius: 5px;
+}
 
 /*--------------------------------------------------*/
 /*                       Body                       */

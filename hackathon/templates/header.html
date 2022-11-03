@@ -12,6 +12,7 @@
 </head>
     <!-- Header -->
     <header>
+
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
@@ -52,13 +53,15 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ url_for('main.login') }}" class="dropdown-item">Login</a></li>
                                 <li><a href="{{ url_for('main.register') }}" class="dropdown-item">Register</a></li>
-                                <li><a href="{{ url_for('main.create_event') }}" class="dropdown-item">Booking History</a></li>
+                                <li><a href="{{ url_for('main.booking_history') }}" class="dropdown-item">Booking History</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <script src="../static/js/activeNav.js"></script>
         <!-- Navigation Bar Finished -->
     </header>
 <body>
