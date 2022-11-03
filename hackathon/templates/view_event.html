@@ -18,9 +18,48 @@
             <p class="col-md-8 fs-4 text-center"><strong>Price:</strong>
                 $12.10</p>
             
-            <button class="create-btn" type="button">Book Now</button>
+            <button type="button" class="create-btn" data-toggle="modal" data-target="#BookingModal">Book Now</button>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BookingModalLabel">Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="title">QUT Coding Competition</h3>
+                    <p>Hosted at QUT's Garden Point Campus.</p>
+                    <button type="button" class="btn btn-warning">Upcoming</button>
+                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
+                    <hr>
+                    <h3 id="title">UQ Coding Competition</h3>
+                    <p>Hosted at UQ's St Lucia. Campus.</p>
+                    <button type="button" class="btn btn-danger">Cancelled</button>
+                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
+                    <hr>
+                    <h3 id="title">AI Platformer Coding Compeition</h3>
+                    <p> Make a simple platformer game based on a set AI Model.</p>
+                    <button type="button" class="btn btn-success">Booked</button>
+                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
+                    <hr>
+                    <h3 id="title">Mechatronics Coding Compeition</h3>
+                    <p>Work with a team of four to develop a machine learning algortihm for production robots.</p>
+                    <button type="button" class="btn btn-secondary">Inactive</button>
+                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
+                </div>
+                <div class="modal-footer">
+                    <a href="booking.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">View
+                            More</button></a>
+                </div>
+            </div>
+        </div>
+    </div> 
      <!-- Comment Section -->
      <div class="container py-5" id="event" align="center">
         <h3 class="display-10 fw-bold">Comments</h3>
