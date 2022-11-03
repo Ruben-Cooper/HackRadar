@@ -16,7 +16,7 @@
     text-decoration: none;
 }
 
-.navbar-nav a .active{
+.navbar ul li a.active {
     background-color: #da8300;
     border-radius: 5px;
 }
