@@ -1,6 +1,6 @@
 from logging import PlaceHolder
 from flask import Blueprint, request, render_template
-from .forms import RegisterForm, CreateEventForm, LoginForm
+from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm
 from flask import Flask, render_template, request, redirect, url_for
 from .db import db, User, Event
 
@@ -63,6 +63,9 @@ def login():
 def booking_history():
     return render_template('booking_history.html')
 
-@bp.route('/event/')
+@bp.route('/event/', methods=['GET', 'POST'])
 def event_details():
+    bookform = BookEventForm()
+    if bookform.validate_on_submit():
+        print(f"Event Name: {bookform.event_name.data}, Event Date: {bookform.event_date.data}, Event Location: {bookform.event_location.data}, Ticket Quantity: {bookform.ticket_quantity.data}, Ticket Price: {bookform.ticket_price.data}")
     return render_template('view_event.html')

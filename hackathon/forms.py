@@ -62,3 +62,10 @@ class CreateEventForm(FlaskForm):
                                  InputRequired("Please Enter Event Status")], choices=status_categories)
     online_event = SelectField("Online Event", choices=online_categories)
     submit = SubmitField("Create Event")
+
+
+class BookEventForm(FlaskForm):
+    ticket_quantity = IntegerField("Ticket Quantity", validators=[
+                                   InputRequired("Please Enter Ticket Quantity")])
+    ticket_price = DecimalField("Ticket Price", validators=[InputRequired("Please Enter Ticket Price")])
+    submit = SubmitField("Book Event")
