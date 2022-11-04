@@ -25,7 +25,7 @@ def register():
         user.set_password(regform.password.data)
         db.session.add(user)
         db.session.commit()
-    return render_template('register.html', form=regform)
+    return render_template('register.html', form=regform, template='form-template')
 
 
 @bp.route('/create_event', methods=['GET', 'POST'])
@@ -69,3 +69,19 @@ def event_details():
     if bookform.validate_on_submit():
         print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
     return render_template('view_event.html', form=bookform)
+
+@bp.errorhandler(404)
+def page_not_found(error):
+    return render_template('error.html'), 404
+
+@bp.errorhandler(500)
+def internal_server_error(error):
+    return render_template('error.html'), 500
+
+@bp.errorhandler(403)
+def forbidden(error):
+    return render_template('error.html'), 403
+
+@bp.errorhandler(410)
+def gone(error):
+    return render_template('error.html'), 410

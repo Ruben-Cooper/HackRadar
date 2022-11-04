@@ -11,7 +11,7 @@
             <form method="POST" action="{{ url_for('main.login') }}">
                 {{ form.csrf_token }}
 
-                <!-- Email ID -->
+                <!-- Username -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
@@ -27,6 +27,13 @@
                         <div class="form-group">
                             {{form.loginpassword.label}}
                             {{form.loginpassword(class="form-control", placeholder ="Enter your Password")}}
+                        </div> 
+                    </div> 
+                </div> <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.RememberMe()}} {{form.RememberMe.label}} 
                         </div> 
                     </div> 
                 </div> <br>
