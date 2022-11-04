@@ -406,6 +406,29 @@ div.form-group{
 }
 
 
+/*--------------------------------------------------*/
+/*                   Booking Modal                  */
+/*--------------------------------------------------*/
+#BookModal .divider{
+    align-items: center;
+    max-width: 75%;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    max-width: 250px;
+}
+
+#BookModal .icons{
+    max-width: 75%;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    max-width: 150px;
+}
+
+#BookModal .form-group{
+    color: rgb(0, 0, 0);
+}
+
+
 
 
 

@@ -67,5 +67,5 @@ def booking_history():
 def event_details():
     bookform = BookEventForm()
     if bookform.validate_on_submit():
-        print(f"Event Name: {bookform.event_name.data}, Event Date: {bookform.event_date.data}, Event Location: {bookform.event_location.data}, Ticket Quantity: {bookform.ticket_quantity.data}, Ticket Price: {bookform.ticket_price.data}")
-    return render_template('view_event.html')
+        print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
+    return render_template('view_event.html', form=bookform)

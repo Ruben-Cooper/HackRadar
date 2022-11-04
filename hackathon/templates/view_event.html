@@ -105,34 +105,59 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="EventModalLabel">Coding Compeitions</h5>
+                    <h5 class="modal-title" id="EventModalLabel">QUT Coding Compeition</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h3 id="title">QUT Coding Competition</h3>
-                    <p>Hosted at QUT's Garden Point Campus.</p>
-                    <button type="button" class="btn btn-warning">Upcoming</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">UQ Coding Competition</h3>
-                    <p>Hosted at UQ's St Lucia. Campus.</p>
-                    <button type="button" class="btn btn-danger">Cancelled</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">AI Platformer Coding Compeition</h3>
-                    <p> Make a simple platformer game based on a set AI Model.</p>
-                    <button type="button" class="btn btn-success">Booked</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">Mechatronics Coding Compeition</h3>
-                    <p>Work with a team of four to develop a machine learning algortihm for production robots.</p>
-                    <button type="button" class="btn btn-secondary">Inactive</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
+                <div class="modal-body" align="center">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="../static/img/qut.jpg" class="img-fluid" alt="QUT Coding Compeition">
+                        </div> 
+                    </div> <br>
+                    <div class="row justify-content-center">
+                        <div class="col-12 divider">
+                            <p><strong>Event Date:</strong><br>
+                                20/09/2022-23/09/2022</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-evenly">
+                        <div class="col-6 icons">
+                            <p><strong>Avaliable Tickets:</strong> <br>
+                                120</p>
+                        </div>
+                        <div class="col-6 icons">
+                            <p><strong>Price:</strong><br>
+                            $12.10</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-evenly">
+                        <div class="col-6 icons">
+                            <p><strong>Location:</strong> <br>
+                            QUT Garden's Point Campus</p>
+                        </div>
+                        <div class="col-6 icons">
+                            <p><strong>Event Category:</strong> <br>
+                            Hackathon</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="form-group">
+                                {{ form.ticket_quantity.label }}
+                                {{ form.ticket_quantity(class="form-control", placeholder ="Please Enter Ticket Quantity")}}
+                            </div> 
+                        </div> 
+                        <div class="col-6">
+                            <div class="form-group">
+                                <br>
+                                <p><b>Total:</b> $</p>
+                            </div> 
+                        </div> 
+                        <p style="text-align: left;">*note: tickets are limited to 10 per user</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="booking.html"><button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">View
-                            More</button></a>
+                    {{form.submit(class="book-btn")}}
                 </div>
             </div>
         </div>
