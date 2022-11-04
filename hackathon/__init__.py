@@ -22,8 +22,6 @@ def create_app():
     # set the app configuration data
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['TRAP_HTTP_EXCEPTIONS'] = True
-    app.register_error_handler(Exception, page_not_found)
     # # initialize db with flask app
     db.init_app(app)
 
