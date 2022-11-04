@@ -6,7 +6,6 @@ from flask_login import LoginManager
 from .views import page_not_found
 
 
-
 # create a function that creates a web application
 # a web server will run this web application
 db = SQLAlchemy()
@@ -21,8 +20,8 @@ def create_app():
 
     # set the app configuration data
 
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
-    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['TRAP_HTTP_EXCEPTIONS'] = True
     app.register_error_handler(Exception, page_not_found)
 
