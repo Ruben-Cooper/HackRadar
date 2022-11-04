@@ -5,6 +5,7 @@
 
 <body>
 
+
     <img class="bg" src="../static/img/brisbane-local-marketing-nHiPAtsZcCo-unsplash.jpg">
     <div class="overlay">
         <br> <br> <br> <br> <br> <br> <br>
@@ -21,7 +22,7 @@
                         <div class="form-group">
                             {{form.event_name.label}}
                             {{form.event_name(class="form-control", placeholder ="Enter Event Name")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -31,7 +32,7 @@
                         <div class="form-group">
                             {{form.event_description.label}}
                             {{form.event_description(class="form-control", placeholder ="Enter Event Description")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -41,7 +42,7 @@
                         <div class="form-group">
                             {{form.event_date.label}}
                             {{form.event_date(class="form-control")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
 
@@ -70,7 +71,8 @@
                     <div class="col-12">
                         <div class="form-group">
                             {{form.ticket_quantity.label}}
-                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity", min="1")}}
+                            {{form.ticket_quantity(class="form-control", placeholder ="Enter Ticket Quantity",
+                            min="1")}}
                         </div>
                     </div>
                 </div> <br>
@@ -94,6 +96,7 @@
                         </div>
                     </div>
                 </div> <br>
+
 
                 <!-- Event and Online Status -->
                 <div class="row">
@@ -125,4 +128,5 @@
 </body>
 
 {% endblock %}
+
 </html>

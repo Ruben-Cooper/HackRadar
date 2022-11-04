@@ -1,14 +1,15 @@
 {% extends "header.html"%}
 {% block header %}
-<body> 
+
+<body>
     <img class="bg" src="../static/img/brisbane-local-marketing-nHiPAtsZcCo-unsplash.jpg">
     <div class="overlay">
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
         <!-- SignIn -->
         <div class="container" id="signin">
             <br>
             <h2 style="text-align: center">SIGN IN</h2>
-            <form method="POST" action="{{ url_for('main.login') }}">
+            <form method="POST" action="">
                 {{ form.csrf_token }}
 
                 <!-- Username -->
@@ -17,18 +18,18 @@
                         <div class="form-group">
                             {{form.loginusername.label}}
                             {{form.loginusername(class="form-control", placeholder ="Enter your Username")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
-    
+
                 <!-- Password -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.loginpassword.label}}
                             {{form.loginpassword(class="form-control", placeholder ="Enter your Password")}}
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 </div> <br>
                 <div class="row">
                     <div class="col-12">
@@ -45,7 +46,7 @@
                         </div>
                     </div>
                     <!-- Sign In Link-->
-                    <a href="{{ url_for('main.register') }}">Register?</a>
+                    <a href="{{ url_for('auth.register') }}"">Register?</a>
                 </div> <br>
             </form>
         </div>

@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 {% extends "header.html"%}
 {% block header %}
-<body> 
+
+<body>
     <img class="bg" src="../static/img/brisbane-local-marketing-nHiPAtsZcCo-unsplash.jpg">
     <div class="overlay">
-        <br> <br> <br> <br> <br> <br> <br> 
+        <br> <br> <br> <br> <br> <br> <br>
         <!-- Registration -->
         <div class="container" id="register">
             <br>
             <h2 style="text-align: center">REGISTER</h2>
-            <form method="POST" action="{{ url_for('main.register') }}">
+            <form method="POST" action="{{ url_for('auth.register') }}">
                 {{ form.csrf_token }}
-    
+
                 <!-- Username -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.user_name.label}}
                             {{form.user_name(class="form-control", placeholder ="Enter your Username")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
-    
+
                 <!-- Email ID -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.email_id.label}}
                             {{form.email_id(class="form-control", placeholder ="Enter your Email Address")}}
-                        </div> 
+                        </div>
                     </div>
                 </div> <br>
-    
+
                 <!-- Password -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.password.label}}
                             {{form.password(class="form-control", placeholder ="Enter your Password")}}
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 </div> <br>
-    
+
                 <!-- Confirm Password -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.confirm.label}}
                             {{form.confirm(class="form-control", placeholder ="Re-enter Password")}}
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 </div> <br>
-    
+
                 <!-- Contact Number -->
                 <div class="row">
                     <div class="col-12">
@@ -59,19 +60,19 @@
                             {{form.contact_number.label}}
                             {{form.contact_number(class="form-control", placeholder ="Enter Contact Number")}}
                         </div>
-                    </div> 
+                    </div>
                 </div> <br>
-    
+
                 <!-- Address -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             {{form.address.label}}
                             {{form.address(class="form-control", placeholder ="Enter Address")}}
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 </div> <br>
-    
+
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col-12 text-center">
@@ -80,7 +81,7 @@
                         </div>
                     </div>
                     <!-- Sign In Link-->
-                    <a href="{{ url_for('main.login') }}">Already have an Account?</a>
+                    <a href="{{ url_for('auth.login') }}">Already have an Account?</a>
                 </div> <br>
             </form>
         </div>
