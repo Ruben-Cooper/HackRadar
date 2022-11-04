@@ -1,11 +1,16 @@
 from logging import PlaceHolder
 from flask import Blueprint, request, render_template
 from .forms import RegisterForm, CreateEventForm, LoginForm
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
 
 bp = Blueprint('main', __name__)
+
+
+@bp.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
 
 
 @bp.route('/')

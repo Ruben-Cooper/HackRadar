@@ -13,7 +13,7 @@ bp = Blueprint('auth', __name__)
 
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
-    regform = RegisterForm(csrf_enabled=False)
+    regform = RegisterForm()
     if regform.validate_on_submit():
         user = User(username=regform.user_name.data,
                     email=regform.email_id.data, contactnumber=regform.contact_number.data, address=regform.address.data)
@@ -25,15 +25,16 @@ def register():
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
-    loginform = LoginForm(csrf_enabled=False)
-    if (loginform.validate_on_submit):
-        user = User.query.filter_by(
-            username=loginform.loginusername.data).first()
-        # If username exists and then tests password
-        if user and user.check_password(loginform.loginpassword.data):
-            login_user(user)
-
-        return render_template('SignIn.html', form=loginform)
+    loginform = LoginForm()
+    if loginform.validate_on_submit():
+        user = User.query.filter_by(username=loginform.username.data).first()
+        if user is None or not user.check_password(loginform.password.data):
+            flash("Invalid username or password")
+            return redirect(url_for('login'))
+        login_user(user)
+        next_page = url_for("index")
+        return redirect(next_page)
+    return render_template('SignIn.html', title='Sign In', form=loginform)
 
 
 # @bp.route('/login', methods=['GET', 'POST'])
@@ -44,7 +45,7 @@ def login():
 #     if (login_form.validate_on_submit() == True):
 #         user_name = login_form.username.data
 #         password = login_form.password.data
-#         u1 = User.query.filter_by(name=user_name).first()
+#         u1 = User.query.filter_by(username=user_name).first()
 #         if u1 is None:
 #             error = 'Incorrect user name'
 #         # takes the hash and password

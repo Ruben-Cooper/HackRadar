@@ -13,12 +13,11 @@ def load_user(user_id):
 
 
 class User(db.Model, UserMixin):
-    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    phone = db.Column(db.String(10), nullable=False)
+    contactnumber = db.Column(db.String(10), nullable=False)
     address = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
@@ -35,7 +34,6 @@ class User(db.Model, UserMixin):
 
 
 class Event(db.Model):
-    __tablename__ = 'event'
     id = db.Column(db.Integer, primary_key=True)
     event_name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
@@ -52,7 +50,6 @@ class Event(db.Model):
 
 
 class Booking(db.Model):
-    __tablename__ = 'booking'
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -63,7 +60,6 @@ class Booking(db.Model):
 
 
 class Comment(db.Model):
-    __tablename__ = 'comment'
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
