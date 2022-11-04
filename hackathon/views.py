@@ -1,8 +1,10 @@
 from logging import PlaceHolder
 from flask import Blueprint, request, render_template
 from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort
 from .db import db, User, Event
+
+
 
 
 bp = Blueprint('main', __name__)
@@ -70,18 +72,19 @@ def event_details():
         print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
     return render_template('view_event.html', form=bookform)
 
-@bp.errorhandler(404)
-def page_not_found(error):
+
+@bp.errorhandler(400)
+def page_not_found(e):
     return render_template('error.html'), 404
 
 @bp.errorhandler(500)
-def internal_server_error(error):
+def internal_server_error(e):
     return render_template('error.html'), 500
 
 @bp.errorhandler(403)
-def forbidden(error):
+def forbidden(e):
     return render_template('error.html'), 403
 
 @bp.errorhandler(410)
-def gone(error):
+def gone(e):
     return render_template('error.html'), 410
