@@ -2,7 +2,7 @@
 {% block header %}
  <!-- Main Body Section -->
 
- <body style="height:2000px; background-color:#383838">
+ <body style="height:2000px; background-color:#454a4f">
     <!-- Make a Carousel -->
     <div id="myCarousel" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -126,6 +126,35 @@
         </div>
     </div>
 
+    <h1 class="mt-4 mb-4">Upcoming Events</h1>
+    <div class="container">
+        <div class="row justify-content-between" id="UpcomingEvent">
+            <div class="col-xl-6">
+                <div class="overlay-image"><a class="navbar-brand" href="/event">
+                    <button id="close-image" class="btn"><img src="../static/img/qut.jpg">
+                    <div class="hover">
+                        <div class="info">
+                            <p>QUT Coding Compeition</p>
+                            <p>Location: QUT Garden's Point Campus</p>
+                            <p>Status: Open</p>
+                        </div>
+                    </div>
+                </button></a></div>
+            </div>
+            <div class="col-xl-6">
+                <div class="overlay-image"><a class="navbar-brand" href="/event">
+                    <button id="close-image" class="btn"><img src="../static/img/qut.jpg">
+                    <div class="hover">
+                        <div class="info">
+                            <p>QUT Coding Compeition</p>
+                            <p>Location: QUT Garden's Point Campus</p>
+                            <p>Status: Open</p>
+                        </div>
+                    </div>
+                </button></a></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="EventModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">

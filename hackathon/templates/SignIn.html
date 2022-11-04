@@ -12,7 +12,7 @@
             <form method="POST" action="">
                 {{ form.csrf_token }}
 
-                <!-- Email ID -->
+                <!-- Username -->
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
@@ -30,6 +30,13 @@
                             {{form.loginpassword(class="form-control", placeholder ="Enter your Password")}}
                         </div>
                     </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{form.RememberMe()}} {{form.RememberMe.label}} 
+                        </div> 
+                    </div> 
                 </div> <br>
                 <!-- Submit Button -->
                 <div class="row">

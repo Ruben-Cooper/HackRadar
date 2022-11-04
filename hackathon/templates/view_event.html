@@ -1,37 +1,39 @@
 {% extends "header.html"%}
 {% block header %}
+ <!-- Main Body Section -->
 
-<body style="background-color: #949494;">
-    <!-- Event Details -->
-    <div class="p-5 mb-5 bg-light rounded-3">
-        <div class="container py-5" id="event" align="center">
-            <img src="../static/img/qut.jpg" class="img-qut img-fluid" />
-            <h1 class="display-5 fw-bold">QUT Coding Compeition</h1>
-            <p><strong>Location: QUT Garden's Point Campus</strong></p>
-            <p class="col-md-8 fs-4 text-center">Attend QUT's Coding Compeition where you and a group of four will spend
-                three nights coding a better alternative to blackboard. Anyone attending the event will recieve pizza
-                and unlimited drinks!</p>
-            <p class="col-md-8 fs-4 text-center"><strong>Event Date:</strong><br>
-                20/09/2022-23/09/2022</p>
-            <p class="col-md-8 fs-4 text-center"><strong>Avaliable Tickets:</strong>
-                120</p>
-            <p class="col-md-8 fs-4 text-center"><strong>Price:</strong>
+ <body style="background-color:#454a4f">
+    <!-- Start of Event Info -->
+    <div class="container py-5" id="event">
+        <div class="row">
+            <div class="event-info-section">
+                <h1 class="mt-4 mb-4">QUT Coding Compeition</h1>
+                <img src="../static/img/qut.jpg" class="img-qut img-fluid"/>
+                <p class="fs-4"><strong>Location: QUT Garden's Point Campus</strong></p>
+                <p class="fs-4">Attend QUT's Coding Compeition where you and a group of four will spend
+                    three nights coding a better alternative to blackboard. Anyone attending the event will recieve pizza
+                    and unlimited drinks!</p>
+                <p class="fs-4"><strong>Event Date:</strong><br>
+                    20/09/2022-23/09/2022</p>
+                <p class="fs-4"><strong>Avaliable Tickets:</strong>
+                    120</p>
+                <p class="fs-4"><strong>Price:</strong>
                 $12.10</p>
 
-            <button class="create-btn" type="button">Book Now</button>
-        </div>
-    </div>
-    <!-- Comment Section -->
-    <div class="container py-5" id="event" align="center">
-        <h3 class="display-10 fw-bold">Comments</h3>
+                <button data-bs-toggle="modal" data-bs-target="#BookModal" href="#" class="book-btn">Book Now</button>
+            </div>
+
+            <!-- Comment Section -->
+     <div class="container py-5" id="event-comments" align="center">
+        <h3 class="fw-bold">Comments</h3>
         <div class="row d-flex justify-content-center">
-            <div class="col-md-8 col-lg-6">
+            <div class="col-md-8 col-lg-12">
                 <div class="card shadow-0 border">
                     <div class="card-body p-4">
                         <div class="form-outline mb-4">
-                            <input type="text" id="addComment" class="form-control" placeholder="Type comment..." />
+                            <input type="text" id="addComment" class="form-control" placeholder="Type comment..."/>
                             <br>
-                            <button class="create-btn" type="button">Post Comment</button>
+                            <button class="book-btn" type="button">Post Comment</button>
                         </div>
 
                         <div class="card mb-4">
@@ -67,7 +69,6 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <p>Don't go! They tell you to code</p>
-
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex flex-row align-items-center">
                                         <p class="small mb-0 ms-1">User: Mary Kate</p>
@@ -98,7 +99,70 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="BookModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EventModalLabel">QUT Coding Compeition</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" align="center">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="../static/img/qut.jpg" class="img-fluid" alt="QUT Coding Compeition">
+                        </div> 
+                    </div> <br>
+                    <div class="row justify-content-center">
+                        <div class="col-12 divider">
+                            <p><strong>Event Date:</strong><br>
+                                20/09/2022-23/09/2022</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-evenly">
+                        <div class="col-6 icons">
+                            <p><strong>Avaliable Tickets:</strong> <br>
+                                120</p>
+                        </div>
+                        <div class="col-6 icons">
+                            <p><strong>Price:</strong><br>
+                            $12.10</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-evenly">
+                        <div class="col-6 icons">
+                            <p><strong>Location:</strong> <br>
+                            QUT Garden's Point Campus</p>
+                        </div>
+                        <div class="col-6 icons">
+                            <p><strong>Event Category:</strong> <br>
+                            Hackathon</p>
+                        </div>
+                    </div> <br>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="form-group">
+                                {{ form.ticket_quantity.label }}
+                                {{ form.ticket_quantity(class="form-control", placeholder ="Please Enter Ticket Quantity")}}
+                            </div> 
+                        </div> 
+                        <div class="col-6">
+                            <div class="form-group">
+                                <br>
+                                <p><b>Total:</b> $</p>
+                            </div> 
+                        </div> 
+                        <p style="text-align: left;">*note: tickets are limited to 10 per user</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    {{form.submit(class="book-btn")}}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-
 {% endblock %}
+
+   

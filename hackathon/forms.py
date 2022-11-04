@@ -8,6 +8,7 @@ categories = [('Business Case Competition'), ('Business Proposals'), ('Coding Co
               ('Datathon'), ('Hackathon'), ('Idea Pitch'), ('Robotics'), ('Seminars')]
 status_categories = [('Unpublished'), ('Open'), ('Sold-out'), ('Cancelled')]
 online_categories = [('Yes'), ('No')]
+ticket_categories = [('0'), ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9'), ('10')]
 
 # creates the login information
 
@@ -17,6 +18,7 @@ class LoginForm(FlaskForm):
                                 InputRequired('Enter user name')])
     loginpassword = PasswordField("Password", validators=[
                                   InputRequired('Enter user password')])
+    RememberMe = BooleanField("Remember Me")
     submit = SubmitField("Login")
 
  # this is the registration form
@@ -62,3 +64,9 @@ class CreateEventForm(FlaskForm):
         InputRequired("Please Enter Event Status")], choices=status_categories)
     online_event = SelectField("Online Event", choices=online_categories)
     submit = SubmitField("Create Event")
+
+
+class BookEventForm(FlaskForm):
+    ticket_quantity = SelectField("Ticket Quantity", validators=[
+                                   InputRequired("Please Enter Ticket Quantity")], choices=ticket_categories)
+    submit = SubmitField("Book Event")

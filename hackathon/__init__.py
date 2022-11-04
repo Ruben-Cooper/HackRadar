@@ -3,8 +3,8 @@ from flask import Flask
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_sqlalchemy import SQLAlchemy
 from .views import page_not_found
+
 
 
 # create a function that creates a web application
@@ -20,8 +20,12 @@ def create_app():
     app.secret_key = 'utroutoru'
 
     # set the app configuration data
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['TRAP_HTTP_EXCEPTIONS'] = True
+    app.register_error_handler(Exception, page_not_found)
+
     # # initialize db with flask app
     db.init_app(app)
 
