@@ -44,6 +44,12 @@ def event_details():
     return render_template('view_event.html', form=bookform)
 
 
+@bp.route('/category/codingcompetition')
+def coding_competition():
+    return render_template('coding_competition.html')
+
+
+
 @bp.errorhandler(400)
 def page_not_found(e):
     return render_template('error.html'), 404
