@@ -7,11 +7,11 @@ from flask_login import LoginManager, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 
-
+# get user from database
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
+# user database model
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -32,7 +32,7 @@ class User(db.Model, UserMixin):
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-
+# event database model
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     event_name = db.Column(db.String(100), nullable=False)
@@ -47,7 +47,7 @@ class Event(db.Model):
     image = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
-
+# booking database model
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
@@ -56,7 +56,7 @@ class Booking(db.Model):
     price = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime, db.ForeignKey('event.id'), nullable=False)
 
-
+# comment database model
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)

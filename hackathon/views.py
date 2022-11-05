@@ -12,15 +12,15 @@ import os
 
 bp = Blueprint('main', __name__)
 
-
+# allowed image types
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-
+# check if file is allowed
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
+# index route
 @bp.route('/')
 def index():
     firstevent = firstevent = Event.query.order_by(asc(Event.date)).first()
@@ -28,7 +28,7 @@ def index():
 
     return render_template('base.html', firstevent=firstevent, secondevent=secondevent)
 
-
+# create event route
 @bp.route('/create_event', methods=['GET', 'POST'])
 @login_required # Decorator to protect the route from unauthenticated users
 def create_event():
@@ -55,7 +55,7 @@ def create_event():
             return redirect(url_for('main.index', name=filename))
     return render_template('create_event.html', form=form)
 
-
+# event route
 @bp.route('/event/<int:event_id>', methods=['GET', 'POST'])
 def event(event_id):
     commentforms = CommentForm()
@@ -83,6 +83,7 @@ def event(event_id):
 #     return render_template('view_event.html', bookingform=bookform, commentforms=commentform)
 
 
+# category routes
 @bp.route('/category/businesscase')  # this one
 def business_case():
     category = Event.query.filter_by(category='Business Case Competition').order_by(asc(Event.date)).all()
@@ -131,7 +132,7 @@ def seminar():
     category = Event.query.filter_by(category='Seminar').order_by(asc(Event.date)).all()
     return render_template('cate_seminar.html', category=category)  
 
-
+# error handlers
 # @bp.errorhandler(400)
 # def page_not_found(e):
 #     return render_template('error.html'), 404

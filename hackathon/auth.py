@@ -11,7 +11,7 @@ from sqlalchemy import desc, asc
 
 bp = Blueprint('auth', __name__)
 
-
+# register route
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
     regform = RegisterForm()
@@ -25,7 +25,7 @@ def register():
         return redirect(url_for('auth.login'))
     return render_template('register.html', form=regform)
 
-
+# login route
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -44,7 +44,7 @@ def login():
         return redirect(next_page)
     return render_template('SignIn.html', title='Sign In', form=loginform)
 
-
+# user info route
 @bp.route('/user/<username>')
 @login_required
 def userpage(username):
@@ -55,17 +55,45 @@ def userpage(username):
         events = []
     return render_template('userpage.html', user=user, events=events)
 
-
+# logout route
 @bp.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
 
+# edit user info route
+@bp.route("/user/edit/<int:event_id>")
+def edit_event(event_id):
+    form = CreateEventForm()
+    form_action = url_for("auth.update_event", event_id=event_id)
+    my_event = Event.get(form.event_name.data, form.event_description.data, form.event_date.data, form.online_event.data, form.event_location.data, form.event_category.data, form.event_status.data, form.ticket_quantity.data, form.ticket_price)
+    if request.method == 'GET':
+        form.event_name.data = my_event.event_name
+        form.event_description.data = my_event.event_description
+        form.event_date.data = my_event.date
+        form.online_event.data = my_event.online_event
+        form.event_location.data = my_event.location
+        form.event_category.data = my_event.category
+        form.event_status.data = my_event.status
+        form.ticket_quantity.data = my_event.ticket_quantity
+        form.ticket_price.data = my_event.ticket_price
 
-# @bp.route("/user/edit/<int:event_id>")
-# def edit_event(event_id):
-#     form = CreateEventForm()
-#     form.validate():
-#     query = CreateEventForm(form.event_name.data, form.event_description.data, form.event_date.data, form.online_event.data, form.event_location.data, form.event_category.data, form.event_status.data, form.ticket_quantity.data, form.ticket_price)
+    if form.validate_on_submit():
+        my_event.event_name = form.event_name.data
+        my_event.event_description = form.event_description.data
+        my_event.date = form.event_date.data
+        my_event.online_event = form.online_event.data
+        my_event.location = form.event_location.data
+        my_event.category = form.event_category.data
+        my_event.status = form.event_status.data
+        my_event.ticket_quantity = form.ticket_quantity.data
+        my_event.ticket_price = form.ticket_price.data
 
-#     return render_template("edit_event.html", form=form)
+        if form.event_name.data == "":
+            query = CreateEventForm(form.event_name.data, form.event_description.data, form.event_date.data, form.online_event.data, form.event_location.data, form.event_category.data, form.event_status.data, form.ticket_quantity.data, form.ticket_price.data)
+
+            db.session.add(query)
+            db.session.commit()
+            return redirect(url_for('auth.userpage', username=current_user.username))
+    return redirect(url_for('auth.userpage', username=current_user.username))
+

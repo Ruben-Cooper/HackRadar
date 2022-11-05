@@ -44,7 +44,7 @@ class RegisterForm(FlaskForm):
     address = StringField("Address", validators=[
                           InputRequired("Please Enter Address")])
 
-
+# form for creating an event
 class CreateEventForm(FlaskForm):
     event_name = StringField("Event Name", validators=[Length(min=1),
                              InputRequired("Please Enter Event Name")])
@@ -69,13 +69,13 @@ class CreateEventForm(FlaskForm):
         if event_date.data < date.today():
             raise ValidationError("Event date cannot be in the past")
 
-
+# form for booking event
 class BookEventForm(FlaskForm):
     ticket_quantity = IntegerField("Ticket Quantity", validators=[
         InputRequired("Please Enter Ticket Quantity")])
     submit = SubmitField("Book Event")
 
-
+# form for comments on event
 class CommentForm(FlaskForm):
     comment = TextAreaField("Comment", validators=[
                             InputRequired("Please Enter Comment")])
