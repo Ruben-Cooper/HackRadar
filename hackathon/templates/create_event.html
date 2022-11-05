@@ -49,9 +49,9 @@
                         <div class="form-group">
                             {{form.event_date.label}}
                             {{form.event_date(class="form-control")}}
-                            {% if validate_date.errors %}
+                            {% if event_date.errors %}
                                 <ul class="errors">
-                                    {% for error in validate_date.errors %}
+                                    {% for error in event_date.errors %}
                                         <li>{{ error }}</li>
                                     {% endfor %}
                                 </ul>
