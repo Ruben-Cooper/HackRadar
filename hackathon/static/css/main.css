@@ -215,22 +215,46 @@ h3 {
 
 
 /*--------------------------------------------------*/
-/*                Booking History                   */
+/*                  Account Page                    */
 /*--------------------------------------------------*/
-#booking_history {
+#my_account {
     max-width: 75%;
     background-color: #454a4f;
     border-radius: 5px;
     max-width: 900px;
 }
 
+#my_account h3{
+    text-align: center;
+    text-decoration: underline solid 2px #da8300;
+}
 
-#booking_table_titles {
+#my_account p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#table_titles {
     color: white;
     border-bottom: #da8300 1.5px solid;
 }
 
-#booking_history table td {
+#my_account table td {
+    color: white;
+}
+
+#my_account .create-btn {
+    background-color: transparent;
+    color: #da8300;
+    border: 1px solid #da8300;
+    padding: 7px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#my_account .create-btn:hover {
+    background-color: #da8300;
     color: white;
 }
 

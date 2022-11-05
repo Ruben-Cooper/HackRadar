@@ -9,20 +9,20 @@
         <br> <br> <br> <br> <br> <br> <br> 
 
         <!-- Booking History -->
-        <div class="container" id="booking_history">
+        <div class="container" id="my_account">
             <br>
-                <h2 style="text-align: center; border-bottom: #da8300 2px solid; max-width: 30%;">Booking History</h2>
-                <h3>Hello {{current_user.username}}! Here is a list of your booked events.</h3>
+            <h1>Welcome {{current_user.username}}!</h1>
+            <br>
+                <h3>Booking History</h3>
                 <br>
-
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-striped">
                         <thead>
-                            <tr id="booking_table_titles">
+                            <tr id="table_titles">
                                 <th scope="col"></th>
                                 <th scope="col">Event Name</th>
-                                <th scope="col">Date Booked</th>
+                                <th scope="col">Date Booked ↓</th>
                                 <th scope="col">Booking ID</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Status</th>
@@ -36,28 +36,49 @@
                                 <td>123456789</td>
                                 <td>$100</td>
                                 <td>Booked</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
+                                <td><button class="btn btn-primary create-btn">View</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
+        <br><br>
+
+        <div class="container" id="my_account">
+            <br>
+                <h3>Created Events</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr id="table_titles">
+                                <th scope="col"></th>
+                                <th scope="col">Event Name</th>
+                                <th scope="col">Date Created ↓</th>
+                                <th scope="col">Event ID</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                                <td><button class="btn btn-primary create-btn">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 

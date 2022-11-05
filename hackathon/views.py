@@ -22,7 +22,7 @@ def index():
 
 
 @bp.route('/create_event', methods=['GET', 'POST'])
-@login_required  # Decorator to protect the route from unauthenticated users
+# Decorator to protect the route from unauthenticated users
 def create_event():
     createform = CreateEventForm()
     if createform.validate_on_submit():
@@ -31,7 +31,6 @@ def create_event():
 
 
 @bp.route('/booking_history')
-@login_required
 def booking_history():
     return render_template('booking_history.html')
 
