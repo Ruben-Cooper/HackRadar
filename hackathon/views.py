@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, login_required, logout_user
 from datetime import datetime
 from . import db
-from .models import User, Event, Comment
+from .models import User, Event, Comment, Booking
 from werkzeug.utils import secure_filename
 from sqlalchemy import desc, asc
 import os
@@ -65,13 +65,21 @@ def event(event_id):
 
     if event is None:
         abort(404)
-    if request.method == 'POST':
+    if commentforms.is_submitted():
         comment = commentforms.comment.data
         new_comment = Comment(
-            comment=comment, event_id=event_id, user_id=current_user.id, username=current_user.username, date=datetime.date.today())
+            comment=comment, event_id=event_id, user_id=current_user.id, username=current_user.username, date=datetime.now())
         db.session.add(new_comment)
         db.session.commit()
-        return url_for('main.index')
+        return redirect(url_for('main.event', event_id=event_id))
+
+    if bookingform.is_submitted():
+        if current_user.is_authenticated:
+            price = (event.price * bookingform.quantity.data)
+            new_booking = Booking(event_id=event_id, user_id=current_user.id, tickets=bookingform.ticket_quantity.data, date=datetime.now(), price=price)
+            db.session.add(new_booking)
+            db.session.commit()
+            return redirect(url_for('main.event', event_id=event_id))
     return render_template('view_event.html', comments=comments, event=event, commentforms=commentforms, bookingform=bookingform)
 
 

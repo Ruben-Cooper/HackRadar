@@ -48,6 +48,7 @@ def login():
 @bp.route('/user/<username>')
 @login_required
 def userpage(username):
+
     user = current_user  # Get the current user
     user = User.query.filter_by(username=user.username).first()
     events = Event.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()

@@ -100,6 +100,7 @@
                                 </div>
                             </div> <br>
                             <div class="row justify-content-center">
+                                <form method="POST">
                                 <div class="col-6">
                                     <div class="form-group">
                                         {{ bookingform.ticket_quantity.label }}
@@ -111,6 +112,7 @@
                         <div class="modal-footer">
                             {{bookingform.submit(class="book-btn")}}
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
