@@ -65,9 +65,6 @@ class CreateEventForm(FlaskForm):
     online_event = SelectField("Online Event", choices=online_categories)
     submit = SubmitField("Create Event")
 
-    def validate_date(self, event_date):
-        if event_date.data < date.today():
-            raise ValidationError("Event date cannot be in the past")
 
 
 class BookEventForm(FlaskForm):
