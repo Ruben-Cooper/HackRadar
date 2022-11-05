@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    contactnumber = db.Column(db.String(10), nullable=False)
+    contactnumber = db.Column(db.String(15), nullable=False)
     address = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
@@ -38,8 +38,7 @@ class Event(db.Model):
     event_name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime, nullable=False)
-    time = db.Column(db.DateTime, nullable=False)
-    online = db.Column(db.Boolean, nullable=False)
+    online = db.Column(db.String, nullable=False)
     location = db.Column(db.String(200), nullable=False)
     category = db.Column(db.String(50), nullable=False)
     status = db.Column(db.String(50), nullable=False)

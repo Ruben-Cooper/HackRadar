@@ -8,7 +8,8 @@ categories = [('Business Proposal'), ('Coding Competition'),
               ('Datathon'), ('Idea Pitch'), ('Robotics')]
 status_categories = [('Unpublished'), ('Open'), ('Sold-out'), ('Cancelled')]
 online_categories = [('Yes'), ('No')]
-ticket_categories = [('0'), ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9'), ('10')]
+ticket_categories = [('0'), ('1'), ('2'), ('3'), ('4'),
+                     ('5'), ('6'), ('7'), ('8'), ('9'), ('10')]
 
 # creates the login information
 
@@ -56,7 +57,7 @@ class CreateEventForm(FlaskForm):
                                  InputRequired("Please Enter Event Location")])
     ticket_quantity = IntegerField("Ticket Quantity", validators=[
                                    InputRequired("Please Enter Ticket Quantity")])
-    ticket_price = DecimalField("Ticket Price", validators=[
+    ticket_price = IntegerField("Ticket Price", validators=[
                                 InputRequired("Please Enter Ticket Price")])
     event_category = SelectField("Event Category", validators=[
                                  InputRequired("Please Enter Event Category")], choices=categories)
@@ -68,7 +69,7 @@ class CreateEventForm(FlaskForm):
 
 class BookEventForm(FlaskForm):
     ticket_quantity = SelectField("Ticket Quantity", validators=[
-                                   InputRequired("Please Enter Ticket Quantity")], choices=ticket_categories)
+        InputRequired("Please Enter Ticket Quantity")], choices=ticket_categories)
     submit = SubmitField("Book Event")
 
 

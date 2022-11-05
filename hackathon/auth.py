@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.urls import url_parse
 from .forms import LoginForm, RegisterForm
 from flask_login import current_user, login_user, login_required, logout_user
-from .models import User
+from .models import User, Event
 from . import db
 
 bp = Blueprint('auth', __name__)
@@ -42,6 +42,17 @@ def login():
             next_page = url_for("main.index")
         return redirect(next_page)
     return render_template('SignIn.html', title='Sign In', form=loginform)
+
+
+@bp.route('/user/<username>')
+@login_required
+def userpage(username):
+    user = current_user  # Get the current user
+    user = User.query.filter_by(username=user.username).first()
+    events = Event.query.filter_by(user_id=user.id)
+    if events is None:
+        events = []
+    return render_template('userpage.html', user=user, events=events)
 
 
 @bp.route('/logout')

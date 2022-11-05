@@ -3,7 +3,6 @@ from flask import Flask
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from .views import page_not_found
 
 
 # create a function that creates a web application
@@ -22,7 +21,8 @@ def create_app():
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    # app.config['TRAP_HTTP_EXCEPTIONS'] = True
+    app.config['TRAP_HTTP_EXCEPTIONS'] = True
+    from .views import page_not_found
     # app.register_error_handler(Exception, page_not_found)
 
     # # initialize db with flask app
@@ -52,5 +52,4 @@ def create_app():
 
     from . import auth
     app.register_blueprint(auth.bp)
-
     return app

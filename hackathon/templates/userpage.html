@@ -6,15 +6,15 @@
 <body>
     <img class="bg" src="../static/img/brisbane-local-marketing-nHiPAtsZcCo-unsplash.jpg">
     <div class="overlay">
-        <br> <br> <br> <br> <br> <br> <br> 
+        <br> <br> <br> <br> <br> <br> <br>
 
         <!-- Booking History -->
         <div class="container" id="my_account">
             <br>
-            <h1>Welcome {{current_user.username}}!</h1>
+            <h2 style="text-align: center; border-bottom: #da8300 2px solid; max-width: 30%;">Booking History</h2>
+            <h3>Hello {{current_user.username}}! Here is a list of your booked events.</h3>
             <br>
-                <h3>Booking History</h3>
-                <br>
+
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-striped">
@@ -30,7 +30,26 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                        height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                        height="100"></th>
+                                <td>Event Name</td>
+                                <td>DD/MM/YYYY</td>
+                                <td>123456789</td>
+                                <td>$100</td>
+                                <td>Booked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                        height="100"></th>
                                 <td>Event Name</td>
                                 <td>DD/MM/YYYY</td>
                                 <td>123456789</td>
@@ -48,7 +67,7 @@
 
         <div class="container" id="my_account">
             <br>
-                <h3>Created Events</h3>
+            <h3>Created Events</h3>
             <br>
             <div class="row">
                 <div class="col-md-12">
@@ -65,7 +84,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180" height="100"></th>
+                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                        height="100"></th>
                                 <td>Event Name</td>
                                 <td>DD/MM/YYYY</td>
                                 <td>123456789</td>
@@ -83,4 +103,5 @@
 </body>
 
 {% endblock %}
+
 </html>
