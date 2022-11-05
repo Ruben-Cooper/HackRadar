@@ -1,4 +1,4 @@
-from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm
+from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm, CommentForm
 from flask import Flask, render_template, request, redirect, url_for, abort, Blueprint
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, login_required, logout_user
@@ -30,14 +30,50 @@ def create_event():
 @bp.route('/event/', methods=['GET', 'POST'])
 def event_details():
     bookform = BookEventForm()
+    commentform = CommentForm()
     if bookform.validate_on_submit():
         print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
-    return render_template('view_event.html', form=bookform)
+    return render_template('view_event.html', bookingform=bookform, commentforms=commentform)
+
+
+@bp.route('/category/businesscase')  # this one
+def business_case():
+    return render_template('cate_businesscase.html')
+
+
+@bp.route('/category/businessprop')
+def business_prop():
+    return render_template('cate_businessprop.html')
 
 
 @bp.route('/category/codingcompetition')
 def coding_competition():
-    return render_template('coding_competition.html')
+    return render_template('cate_codingcomp.html')
+
+
+@bp.route('/category/datathon')
+def datathon():
+    return render_template('cate_datathon.html')
+
+
+@bp.route('/category/hackathon')
+def hackathon():
+    return render_template('cate_hackathon.html')
+
+
+@bp.route('/category/ideapitch')
+def idea_pitch():
+    return render_template('cate_ideapitch.html')
+
+
+@bp.route('/category/robotics')
+def robotics():
+    return render_template('cate_robotics.html')
+
+
+@bp.route('/category/seminar')
+def seminar():
+    return render_template('cate_seminar.html')  # this one
 
 
 @bp.errorhandler(400)
