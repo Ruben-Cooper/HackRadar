@@ -101,21 +101,21 @@ def seminar():
     return render_template('cate_seminar.html')  # this one
 
 
-# @bp.errorhandler(400)
-# def page_not_found(e):
-#     return render_template('error.html'), 404
+@bp.errorhandler(400)
+def page_not_found(e):
+    return render_template('error.html'), 404
 
 
-# @bp.errorhandler(500)
-# def internal_server_error(e):
-#     return render_template('error.html'), 500
+@bp.errorhandler(500)
+def internal_server_error(e):
+    return render_template('error.html'), 500
 
 
-# @bp.errorhandler(403)
-# def forbidden(e):
-#     return render_template('error.html'), 403
+@bp.errorhandler(403)
+def forbidden(e):
+    return render_template('error.html'), 403
 
 
-# @bp.errorhandler(410)
-# def gone(e):
-#     return render_template('error.html'), 410
+@bp.errorhandler(410)
+def gone(e):
+    return render_template('error.html'), 410

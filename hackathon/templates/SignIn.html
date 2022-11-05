@@ -18,6 +18,13 @@
                         <div class="form-group">
                             {{form.loginusername.label}}
                             {{form.loginusername(class="form-control", placeholder ="Enter your Username")}}
+                            {% if form.loginusername.errors %}
+                                <ul class="errors">
+                                    {% for error in form.loginusername.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>
@@ -28,6 +35,13 @@
                         <div class="form-group">
                             {{form.loginpassword.label}}
                             {{form.loginpassword(class="form-control", placeholder ="Enter your Password")}}
+                            {% if form.loginpassword.errors %}
+                                <ul class="errors">
+                                    {% for error in form.loginpassword.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>

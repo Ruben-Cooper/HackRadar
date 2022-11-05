@@ -19,6 +19,13 @@
                         <div class="form-group">
                             {{form.user_name.label}}
                             {{form.user_name(class="form-control", placeholder ="Enter your Username")}}
+                            {% if form.user_name.errors %}
+                                <ul class="errors">
+                                    {% for error in form.user_name.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>
@@ -29,6 +36,13 @@
                         <div class="form-group">
                             {{form.email_id.label}}
                             {{form.email_id(class="form-control", placeholder ="Enter your Email Address")}}
+                            {% if form.email_id.errors %}
+                                <ul class="errors">
+                                    {% for error in form.email_id.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>
@@ -39,6 +53,13 @@
                         <div class="form-group">
                             {{form.password.label}}
                             {{form.password(class="form-control", placeholder ="Enter your Password")}}
+                            {% if form.password.errors %}
+                                <ul class="errors">
+                                    {% for error in form.password.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>
@@ -49,6 +70,13 @@
                         <div class="form-group">
                             {{form.confirm.label}}
                             {{form.confirm(class="form-control", placeholder ="Re-enter Password")}}
+                            {% if form.password.errors %}
+                                <ul class="errors">
+                                    {% for error in form.password.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>
@@ -59,6 +87,13 @@
                         <div class="form-group">
                             {{form.contact_number.label}}
                             {{form.contact_number(class="form-control", placeholder ="Enter Contact Number")}}
+                            {% if form.contact_number.errors %}
+                                <ul class="errors">
+                                    {% for error in form.contact_number.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <br>

@@ -26,7 +26,7 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
-    user_name = StringField("Username", validators=[
+    user_name = StringField("Username", validators=[Length(min=1),
                             InputRequired("Please Enter your Username")])
     email_id = StringField("Email Address", validators=[InputRequired(
         "Please Enter your Email Address"), Email("Please enter a valid email")])
@@ -37,7 +37,7 @@ class RegisterForm(FlaskForm):
     # submit button
     submit = SubmitField("Register")
     # contact Number field
-    contact_number = StringField("Contact Number", validators=[
+    contact_number = StringField("Contact Number", validators=[Length(min=8, max=15),
                                  InputRequired("Please Enter Contact Number")])
     # Address field
     address = StringField("Address", validators=[
