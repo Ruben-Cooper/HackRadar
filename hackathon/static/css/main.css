@@ -165,8 +165,8 @@ h3 {
     cursor: pointer;
     transition: 0.3s linear;
     max-height: 200px;
-    min-height: 100px;
-    height: auto
+    min-height: 105px;
+    height: auto;
 }
 
 .image-column img:hover {

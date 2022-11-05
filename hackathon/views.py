@@ -1,6 +1,6 @@
 from logging import PlaceHolder
 from flask import Blueprint, request, render_template
-from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm
+from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm, CommentForm
 from flask import Flask, render_template, request, redirect, url_for, request, abort
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
@@ -39,9 +39,10 @@ def booking_history():
 @bp.route('/event/', methods=['GET', 'POST'])
 def event_details():
     bookform = BookEventForm()
+    commentform = CommentForm()
     if bookform.validate_on_submit():
         print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
-    return render_template('view_event.html', form=bookform)
+    return render_template('view_event.html', bookingform=bookform, commentforms=commentform)
 
 
 

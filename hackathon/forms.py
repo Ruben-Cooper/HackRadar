@@ -70,3 +70,10 @@ class BookEventForm(FlaskForm):
     ticket_quantity = SelectField("Ticket Quantity", validators=[
                                    InputRequired("Please Enter Ticket Quantity")], choices=ticket_categories)
     submit = SubmitField("Book Event")
+
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField("Comment", validators=[
+                            InputRequired("Please Enter Comment")])
+    commentsubmit = SubmitField("Add Comment")
+    
