@@ -53,7 +53,7 @@ def userpage(username):
     events = Event.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()
     if events is None:
         events = []
-    return render_template('userpage.html', user=user, events=events, bookings=bookings, event_name=event_name, status=status)
+    return render_template('userpage.html', user=user, events=events)
 
 
 @bp.route('/logout')

@@ -18,8 +18,10 @@
                     {{event.tickets_amt}}</p>
                 <p class="fs-4"><strong>Price:</strong>
                     ${{event.price}}</p>
-
+                
+                {% if current_user.is_authenticated %}
                 <button data-bs-toggle="modal" data-bs-target="#BookModal" href="#" class="book-btn">Book Now</button>
+                {% endif%}
             </div>
 
             <!-- Comment Section -->
