@@ -152,7 +152,7 @@ h3 {
 /*--------------------------------------------------*/
 .image-column {
     flex: 25%;
-    max-width: 50%;
+    max-width: 75%;
     padding: 0 4px;
 }
 
@@ -164,6 +164,9 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s linear;
+    max-height: 200px;
+    min-height: 100px;
+    height: auto
 }
 
 .image-column img:hover {
@@ -182,6 +185,9 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.centered h3{
+    font-size: 15px;
 }
 
 
@@ -491,14 +497,62 @@ div.form-group {
 
 
 
+/*--------------------------------------------------*/
+/*                   category page                  */
+/*--------------------------------------------------*/
+#category {
+    background-color: #454a4f;
+}
+
+#small-img img{
+    max-width: 150px;
+    border: 1px solid #222222;
+    border-radius: 5px;
+    max-height: 150px;
+}
+
+#categorytitle h1{
+    color: rgb(255, 255, 255);
+}
+
+.titlefont{
+    font-size: 20px;
+    font-weight: bold;
+    color: #da8300;
+    margin-bottom: 0;
+}
+
+.datefont{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.locationfont{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.statusfont{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
 
+#button .create-btn{
+    background-color: transparent;
+    color: #da8300;
+    border: 1px solid #da8300;
+    width: 50px;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+}
 
-
-
-
-
-
+#button .create-btn:hover {
+    background-color: #da8300;
+    color: white;
+}
 
 
 

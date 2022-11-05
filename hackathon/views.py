@@ -44,10 +44,38 @@ def event_details():
     return render_template('view_event.html', form=bookform)
 
 
+
+@bp.route('/category/businesscase') #this one
+def business_case():
+    return render_template('cate_businesscase.html')
+
+@bp.route('/category/businessprop')
+def business_prop():
+    return render_template('cate_businessprop.html')
+
 @bp.route('/category/codingcompetition')
 def coding_competition():
-    return render_template('coding_competition.html')
+    return render_template('cate_codingcomp.html')
 
+@bp.route('/category/datathon')
+def datathon():
+    return render_template('cate_datathon.html')
+
+@bp.route('/category/hackathon')
+def hackathon():
+    return render_template('cate_hackathon.html')
+
+@bp.route('/category/ideapitch')
+def idea_pitch():
+    return render_template('cate_ideapitch.html')
+
+@bp.route('/category/robotics')
+def robotics():
+    return render_template('cate_robotics.html')
+
+@bp.route('/category/seminar')
+def seminar():
+    return render_template('cate_seminar.html') #this one
 
 
 @bp.errorhandler(400)

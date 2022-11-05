@@ -1,0 +1,42 @@
+{% extends "header.html"%}
+{% block header %}
+<body id="category">
+    <div class="container py-5" id="categorytitle">
+        <div class="row">
+            <div class="event-info-section">
+                <h1 class="">Hackathon</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container py-6" id="categorycontent">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-12">
+                <div class="card shadow-0 border">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-1 justify-content-sm-between">
+                                        <a class="imagebutton" href="/event/" id="small-img">
+                                            <img src="../static/img/qut.jpg" class="img-fluid"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-6 justify-content-sm-evenly">
+                                        <p class="titlefont"><b>QUT Coding Competition</b></p>
+                                        <p class="datefont">20/09/2022-23/09/2022</p>
+                                        <p class="locationfont">QUT Garden's Point Campus</p>
+                                        <p class="statusfont">Status: Open</p>
+                                    </div>
+                                    <div class="col-3" id="button"> <br>
+                                        <a href="/event/"><button class="create-btn" type="button">Book Now</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <br>
+</body>
+
+{% endblock %}
