@@ -46,26 +46,19 @@
 
                 </ul>
                 <ul class="navbar navbar-nav-right my-1" style="list-style-type: none;">
-                    {% if current_user.is_authenticated %}
                     <li>
                         <a style="color:white">Hello, {{current_user.username}} </a>
                     </li>
-                    {% endif %}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link" id="accountDropdown" role="button" data-bs-toggle="dropdown">
                             <button class="navbar-btn">Account ↓</button>
                         </a>
                         <ul class="dropdown-menu">
-                            {% if current_user.is_authenticated %}
                             <li><a href="{{ url_for('main.booking_history') }}" class="dropdown-item">My Account</a>
                             </li>
-                            {% endif %}
-                            {% if current_user.is_anonymous %}
                             <li><a href="{{ url_for('auth.login') }}" class="dropdown-item">Login</a></li>
                             <li><a href="{{ url_for('auth.register') }}" class="dropdown-item">Register</a></li>
-                            {% else %}
                             <li><a href="{{ url_for('auth.logout') }}" class="dropdown-item">Log Out</a></li>
-                            {% endif %}
 
                         </ul>
                     </li>
