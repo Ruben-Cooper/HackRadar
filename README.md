@@ -1,1 +1,46 @@
-# IAB207
+![](https://raw.githubusercontent.com/Ruben-Cooper/IAB207/main/hackathon/static/img/favicon.png?token=GHSAT0AAAAAAB2KHVHKED2PHKIX2YQMNFE2Y3FXD2A)
+# Hackathon Web Application
+
+Built for IAB207 Assessment Task 3
+
+
+
+
+## Heroku Web Application
+[iab207-deploy](https://iab207-deploy.herokuapp.com/)
+
+
+## 🚀 Contributers
+Ruben, Gustavo, Braydon
+
+
+## Dependencies
+
+Built Using Flask, SQLAlchemy and Bootstrap.
+
+```bash
+# Installed using pip install
+-------------------------------
+Bootstrap-Flask==2.1.0
+click==8.1.3
+dnspython==2.2.1
+email-validator==1.2.1
+Flask==2.2.2
+Flask-Login==0.6.2
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.0.1
+greenlet==1.1.2
+idna==3.3
+importlib-metadata==4.12.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+SQLAlchemy==1.4.40
+Werkzeug==2.2.2
+WTForms==3.0.1
+zipp==3.8.1
+
+# we also need webserver (refered to in heroku Procfile)
+gunicorn==20.1.0
+
+```

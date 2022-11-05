@@ -36,7 +36,7 @@ def login():
         if user is None or not user.check_password(loginform.loginpassword.data):
             flash("Invalid username or password")
             return redirect(url_for('auth.login'))
-        login_user(user, False)
+        login_user(user, loginform.RememberMe.data)
         next_page = request.args.get("next")
         if not next_page or url_parse(next_page).netloc != "":
             next_page = url_for("main.index")
@@ -44,6 +44,7 @@ def login():
     return render_template('SignIn.html', title='Sign In', form=loginform)
 
 
+@bp.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('main.index'))

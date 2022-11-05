@@ -7,7 +7,7 @@
 }
 
 
-.navbar ul li a{
+.navbar ul li a {
     display: block;
     color: white;
     border-radius: 5px;
@@ -28,7 +28,7 @@
     border-radius: 5px;
 }
 
-.navbar .navbar-btn{
+.navbar .navbar-btn {
     background-color: transparent;
     color: #3988ff;
     border: 1px solid #3988ff;
@@ -37,14 +37,14 @@
     border-radius: 5px;
 }
 
-.navbar .navbar-btn:hover{
+.navbar .navbar-btn:hover {
     color: white;
     background-color: #3988ff;
     border-radius: 5px;
     transition: 0.25s ease;
 }
 
-.navbar .dropdown-menu{
+.navbar .dropdown-menu {
     background-color: #212529;
     border-radius: 5px;
 }
@@ -94,15 +94,15 @@ h3 {
     flex-wrap: wrap;
     padding: 0 4px;
 }
-  
+
 #UpcomingEvent img {
     display: block;
     height: 100%;
-    width: 100%;  
+    width: 100%;
 }
 
 
-.overlay-image{
+.overlay-image {
     position: relative;
 }
 
@@ -118,33 +118,33 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-  }
+}
 
-  #close-image .hover {
+#close-image .hover {
     position: absolute;
     top: 1%;
     height: 97.8%;
     width: 96.5%;
     opacity: 0;
     transition: .5s ease;
-  }
-  
-  
-  #close-image:hover .hover {
+}
+
+
+#close-image:hover .hover {
     opacity: 1;
-  }
+}
 
-  #close-image .normal {
+#close-image .normal {
     transition: .5s ease;
-  }
+}
 
-  #close-image:hover .normal {
+#close-image:hover .normal {
     opacity: 0;
-  }
+}
 
-  #close-image .hover {
+#close-image .hover {
     background-color: rgba(66, 66, 66, 0.5);
-  }
+}
 
 /*--------------------------------------------------*/
 /*             Create four equal columns            */
@@ -225,14 +225,12 @@ h3 {
 }
 
 
-#booking_table_titles
-{
+#booking_table_titles {
     color: white;
     border-bottom: #da8300 1.5px solid;
 }
 
-#booking_history table td
-{
+#booking_history table td {
     color: white;
 }
 
@@ -241,14 +239,14 @@ h3 {
 /*--------------------------------------------------*/
 /*                 Create Events Page               */
 /*--------------------------------------------------*/
-#create_event{
+#create_event {
     max-width: 75%;
     background-color: #454a4f;
     border-radius: 5px;
     max-width: 900px;
 }
 
-#create_event .form-control{
+#create_event .form-control {
     color: white;
 
     background-color: #383838;
@@ -269,7 +267,7 @@ h3 {
 }
 
 
-#create_event .create-btn{
+#create_event .create-btn {
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
@@ -317,7 +315,7 @@ img.bg {
 }
 
 
-#register .form-control{
+#register .form-control {
     color: white;
     background-color: #383838;
     border: 1px solid #383838;
@@ -325,7 +323,7 @@ img.bg {
 }
 
 
-#register ::placeholder{
+#register ::placeholder {
     color: #ffffff;
     text-align: left;
     opacity: 50%;
@@ -338,7 +336,7 @@ img.bg {
 
 
 
-#register .create-btn{
+#register .create-btn {
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
@@ -375,7 +373,7 @@ div.form-group {
 
 
 
-#signin .form-control{
+#signin .form-control {
     color: white;
     background-color: #383838;
     border: 1px solid #383838;
@@ -383,7 +381,7 @@ div.form-group {
 }
 
 
-#signin ::placeholder{
+#signin ::placeholder {
     color: #ffffff;
     text-align: left;
     opacity: 50%;
@@ -395,7 +393,7 @@ div.form-group {
 }
 
 
-#signin .create-btn{
+#signin .create-btn {
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
@@ -427,16 +425,16 @@ div.form-group {
     max-width: 900px;
 }
 
-#event .event-info-section{
+#event .event-info-section {
     text-align: center;
     color: white;
 }
 
-#event strong{
+#event strong {
     text-decoration: underline;
 }
 
-#event .book-btn{
+#event .book-btn {
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;
@@ -445,7 +443,7 @@ div.form-group {
     border-radius: 5px;
 }
 
-#event .book-btn:hover{
+#event .book-btn:hover {
     background-color: #da8300;
     color: white;
 }
@@ -461,11 +459,11 @@ div.form-group {
     box-shadow: 0 0 0 0.2rem rgba(218, 131, 0, 0.25);
 }
 
-#event .fw-bold{
+#event .fw-bold {
     color: White;
 }
 
-#event-comments{
+#event-comments {
     max-width: 75%;
     background-color: #454a4f;
     border-radius: 5px;
@@ -476,7 +474,7 @@ div.form-group {
 /*--------------------------------------------------*/
 /*                   Booking Modal                  */
 /*--------------------------------------------------*/
-#BookModal .divider{
+#BookModal .divider {
     align-items: center;
     max-width: 75%;
     border: 1px solid #383838;
@@ -484,14 +482,14 @@ div.form-group {
     max-width: 250px;
 }
 
-#BookModal .icons{
+#BookModal .icons {
     max-width: 75%;
     border: 1px solid #383838;
     border-radius: 5px;
     max-width: 150px;
 }
 
-#BookModal .form-group{
+#BookModal .form-group {
     color: rgb(0, 0, 0);
 }
 
