@@ -1,11 +1,21 @@
 from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm, CommentForm
-from flask import Flask, render_template, request, redirect, url_for, abort, Blueprint
+from flask import Flask, render_template, request, redirect, url_for, abort, Blueprint, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, login_required, logout_user
 from . import db
 from .models import User, Event
+from werkzeug.utils import secure_filename
+import os
 
 bp = Blueprint('main', __name__)
+
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @bp.route('/')
@@ -20,14 +30,29 @@ def index():
 def create_event():
     form = CreateEventForm()
     if request.method == 'POST' and form.validate():
-        new_event = Event(event_name=form.event_name.data, description=form.event_description.data, date=form.event_date.data, online=form.online_event.data, location=form.event_location.data,
-                          category=form.event_category.data, status=form.event_status.data, tickets_amt=form.ticket_quantity.data, price=form.ticket_price.data, image=form.event_image.data, user_id=current_user.id)
-        db.session.add(new_event)
-        db.session.commit()
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(os.path.abspath(os.path.dirname(
+                __file__)), 'static/userimg', secure_filename(file.filename)))
+            new_event = Event(event_name=form.event_name.data, description=form.event_description.data, date=form.event_date.data, online=form.online_event.data, location=form.event_location.data,
+                              category=form.event_category.data, status=form.event_status.data, tickets_amt=form.ticket_quantity.data, price=form.ticket_price.data, image=filename, user_id=current_user.id)
+            db.session.add(new_event)
+            db.session.commit()
+            return redirect(url_for('main.index', name=filename))
     return render_template('create_event.html', form=form)
 
 
-@bp.route('/event/', methods=['GET', 'POST'])
+@bp.route('/event', methods=['GET', 'POST'])
 def event_details():
     bookform = BookEventForm()
     commentform = CommentForm()
@@ -76,21 +101,21 @@ def seminar():
     return render_template('cate_seminar.html')  # this one
 
 
-@bp.errorhandler(400)
-def page_not_found(e):
-    return render_template('error.html'), 404
+# @bp.errorhandler(400)
+# def page_not_found(e):
+#     return render_template('error.html'), 404
 
 
-@bp.errorhandler(500)
-def internal_server_error(e):
-    return render_template('error.html'), 500
+# @bp.errorhandler(500)
+# def internal_server_error(e):
+#     return render_template('error.html'), 500
 
 
-@bp.errorhandler(403)
-def forbidden(e):
-    return render_template('error.html'), 403
+# @bp.errorhandler(403)
+# def forbidden(e):
+#     return render_template('error.html'), 403
 
 
-@bp.errorhandler(410)
-def gone(e):
-    return render_template('error.html'), 410
+# @bp.errorhandler(410)
+# def gone(e):
+#     return render_template('error.html'), 410

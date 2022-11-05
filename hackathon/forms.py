@@ -51,8 +51,6 @@ class CreateEventForm(FlaskForm):
                                       InputRequired("Please Enter Event Description")])
     event_date = DateField("Event Date", validators=[
                            InputRequired("Please Enter Event Date")])
-    event_image = FileField("Event Image", validators=[
-                            InputRequired("Please Enter Event Image")])
     event_location = StringField("Event Location", validators=[
                                  InputRequired("Please Enter Event Location")])
     ticket_quantity = IntegerField("Ticket Quantity", validators=[
@@ -77,4 +75,3 @@ class CommentForm(FlaskForm):
     comment = TextAreaField("Comment", validators=[
                             InputRequired("Please Enter Comment")])
     commentsubmit = SubmitField("Add Comment")
-    

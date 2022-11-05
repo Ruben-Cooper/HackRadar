@@ -44,7 +44,7 @@ class Event(db.Model):
     status = db.Column(db.String(50), nullable=False)
     tickets_amt = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    image = db.Column(db.String(200), nullable=False, default='default.jpg')
+    image = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
