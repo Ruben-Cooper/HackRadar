@@ -4,8 +4,8 @@ from wtforms.fields import *
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 
-categories = [('Business Case Competition'), ('Business Proposals'), ('Coding Competition'),
-              ('Datathon'), ('Hackathon'), ('Idea Pitch'), ('Robotics'), ('Seminars')]
+categories = [('Business Proposal'), ('Coding Competition'),
+              ('Datathon'), ('Idea Pitch'), ('Robotics')]
 status_categories = [('Unpublished'), ('Open'), ('Sold-out'), ('Cancelled')]
 online_categories = [('Yes'), ('No')]
 ticket_categories = [('0'), ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9'), ('10')]
