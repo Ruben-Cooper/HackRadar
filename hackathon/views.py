@@ -6,6 +6,7 @@ from . import db
 from .models import User, Event
 from werkzeug.utils import secure_filename
 import os
+from sqlalchemy import desc, asc
 
 bp = Blueprint('main', __name__)
 
@@ -26,7 +27,7 @@ def index():
 
 
 @bp.route('/create_event', methods=['GET', 'POST'])
-@login_required  # Decorator to protect the route from unauthenticated users
+@login_required # Decorator to protect the route from unauthenticated users
 def create_event():
     form = CreateEventForm()
     if request.method == 'POST' and form.validate():
@@ -52,7 +53,7 @@ def create_event():
     return render_template('create_event.html', form=form)
 
 
-@bp.route('/event', methods=['GET', 'POST'])
+@bp.route('/event/', methods=['GET', 'POST'])
 def event_details():
     bookform = BookEventForm()
     commentform = CommentForm()
@@ -63,12 +64,14 @@ def event_details():
 
 @bp.route('/category/businesscase')  # this one
 def business_case():
-    return render_template('cate_businesscase.html')
+    category = Event.query.filter_by(category='Business Case Competition').order_by(asc(Event.date)).all()
+    return render_template('cate_businesscase.html', category=category)
 
 
 @bp.route('/category/businessprop')
 def business_prop():
-    return render_template('cate_businessprop.html')
+    category = Event.query.filter_by(category='Business Proposal').order_by(asc(Event.date)).all()
+    return render_template('cate_businessprop.html', category=category)
 
 
 @bp.route('/category/codingcompetition')
@@ -76,29 +79,34 @@ def coding_competition():
     return render_template('cate_codingcomp.html')
 
 
-@bp.route('/category/datathon')
+@bp.route('/category/Datathon')
 def datathon():
-    return render_template('cate_datathon.html')
+    category = Event.query.filter_by(category='Datathon').order_by(asc(Event.date)).all()
+    return render_template('cate_datathon.html', category=category)
 
 
 @bp.route('/category/hackathon')
 def hackathon():
-    return render_template('cate_hackathon.html')
+    category = Event.query.filter_by(category='Hackathon').order_by(asc(Event.date)).all()
+    return render_template('cate_hackathon.html', category=category)
 
 
 @bp.route('/category/ideapitch')
 def idea_pitch():
-    return render_template('cate_ideapitch.html')
+    category = Event.query.filter_by(category='Idea Pitch').order_by(asc(Event.date)).all()
+    return render_template('cate_ideapitch.html', category=category)
 
 
 @bp.route('/category/robotics')
 def robotics():
-    return render_template('cate_robotics.html')
+    category = Event.query.filter_by(category='Robotics').order_by(asc(Event.date)).all()
+    return render_template('cate_robotics.html', category=category)
 
 
 @bp.route('/category/seminar')
 def seminar():
-    return render_template('cate_seminar.html')  # this one
+    category = Event.query.filter_by(category='Seminar').order_by(asc(Event.date)).all()
+    return render_template('cate_seminar.html', category=category)  
 
 
 @bp.errorhandler(400)

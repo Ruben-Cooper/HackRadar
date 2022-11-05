@@ -14,7 +14,7 @@
             <h2 style="text-align: center; border-bottom: #da8300 2px solid; max-width: 30%;">Booking History</h2>
             <h3>Hello {{current_user.username}}! Here is a list of your booked events.</h3>
             <br>
-
+            
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-striped">
@@ -29,34 +29,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for booking in bookings %}
                             <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                <th scope="row"><img src="../static/userimg{{event.image}}" alt="placeholder" width="180"
                                         height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
+                                <td>{{booking.event_name}}</td>
+                                <td>{{booking.date}}</td>
+                                <td>{{booking.id}}</td>
+                                <td>${{booking.price}}</td>
+                                <td>{{booking.status}}</td>
+                                <td><a href="/event/{{event.id}}"><button class="btn btn-primary create-btn">View</button></a></td>
                             </tr>
-                            <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
-                                        height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
-                                        height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
-                                <td><button class="btn btn-primary create-btn">View</button></td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -83,16 +67,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for event in events %}`
                             <tr>
-                                <th scope="row"><img src="img/placeholder.jpg" alt="placeholder" width="180"
+                                <th scope="row"><img src="../static/userimg{{event.image}}" alt="placeholder" width="180"
                                         height="100"></th>
-                                <td>Event Name</td>
-                                <td>DD/MM/YYYY</td>
-                                <td>123456789</td>
-                                <td>$100</td>
-                                <td>Booked</td>
+                                <td>{{event.event_name}}</td>
+                                <td>{{event.date}}</td>
+                                <td>{{event.id}}</td>
+                                <td>${{event.price}}</td>
+                                <td>{{event.status}}</td>
                                 <td><button class="btn btn-primary create-btn">Edit</button></td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

@@ -3,10 +3,11 @@ from flask import (
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.urls import url_parse
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, CreateEventForm
 from flask_login import current_user, login_user, login_required, logout_user
-from .models import User, Event
+from .models import User, Event, Booking
 from . import db
+from sqlalchemy import desc, asc
 
 bp = Blueprint('auth', __name__)
 
@@ -49,13 +50,26 @@ def login():
 def userpage(username):
     user = current_user  # Get the current user
     user = User.query.filter_by(username=user.username).first()
-    events = Event.query.filter_by(user_id=user.id)
+    bookings = Booking.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()
+    events = Event.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()
+    event_name = Event.query.get(event_name)
+    status = Event.query.get(status)
+    image = Event.query.get(image)
     if events is None:
         events = []
-    return render_template('userpage.html', user=user, events=events)
+    return render_template('userpage.html', user=user, events=events, bookings=bookings, event_name=event_name, status=status)
 
 
 @bp.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+
+# @bp.route("/user/edit/<int:event_id>")
+# def edit_event(event_id):
+#     form = CreateEventForm()
+#     form.validate():
+#     query = CreateEventForm(form.event_name.data, form.event_description.data, form.event_date.data, form.online_event.data, form.event_location.data, form.event_category.data, form.event_status.data, form.ticket_quantity.data, form.ticket_price)
+
+#     return render_template("edit_event.html", form=form)

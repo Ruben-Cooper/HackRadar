@@ -1,14 +1,15 @@
 
 from flask_wtf import FlaskForm
 from wtforms.fields import *
-from wtforms.validators import InputRequired, Length, Email, EqualTo
+from wtforms.validators import InputRequired, Length, Email, EqualTo, ValidationError, NumberRange
+from datetime import date
 
 
-categories = [('Business Proposal'), ('Coding Competition'),
-              ('Datathon'), ('Idea Pitch'), ('Robotics')]
+categories = [('Business Proposal'), ('Coding Competition'), ('Hackathon'), ('Business Case Competition'),  
+            ('Seminars'), ('Datathon'), ('Idea Pitch'), ('Robotics')]
 status_categories = [('Unpublished'), ('Open'), ('Sold-out'), ('Cancelled')]
 online_categories = [('Yes'), ('No')]
-ticket_categories = [('0'), ('1'), ('2'), ('3'), ('4'),
+ticket_categories = [('1'), ('2'), ('3'), ('4'),
                      ('5'), ('6'), ('7'), ('8'), ('9'), ('10')]
 
 # creates the login information
@@ -45,17 +46,17 @@ class RegisterForm(FlaskForm):
 
 
 class CreateEventForm(FlaskForm):
-    event_name = StringField("Event Name", validators=[
+    event_name = StringField("Event Name", validators=[Length(min=1),
                              InputRequired("Please Enter Event Name")])
     event_description = TextAreaField("Event Description", validators=[
                                       InputRequired("Please Enter Event Description")])
     event_date = DateField("Event Date", validators=[
-                           InputRequired("Please Enter Event Date")])
+                           InputRequired("Please Enter Event Date")],default=date.today)
     event_location = StringField("Event Location", validators=[
                                  InputRequired("Please Enter Event Location")])
-    ticket_quantity = IntegerField("Ticket Quantity", validators=[
+    ticket_quantity = IntegerField("Ticket Quantity", validators=[NumberRange(min=1),
                                    InputRequired("Please Enter Ticket Quantity")])
-    ticket_price = IntegerField("Ticket Price", validators=[
+    ticket_price = IntegerField("Ticket Price", validators=[NumberRange(min=1),
                                 InputRequired("Please Enter Ticket Price")])
     event_category = SelectField("Event Category", validators=[
                                  InputRequired("Please Enter Event Category")], choices=categories)
@@ -63,6 +64,10 @@ class CreateEventForm(FlaskForm):
         InputRequired("Please Enter Event Status")], choices=status_categories)
     online_event = SelectField("Online Event", choices=online_categories)
     submit = SubmitField("Create Event")
+
+    def validate_date(self, event_date):
+        if event_date.data < date.today():
+            raise ValidationError("Event date cannot be in the past")
 
 
 class BookEventForm(FlaskForm):

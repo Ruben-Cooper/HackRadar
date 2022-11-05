@@ -9,6 +9,7 @@
         </div>
     </div>
     <div class="container py-6" id="categorycontent">
+        {% for categories in category %}
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-lg-12">
                 <div class="card shadow-0 border">
@@ -17,18 +18,18 @@
                             <div class="container">
                                 <div class="row justify-content-between">
                                     <div class="col-md-1 justify-content-sm-between">
-                                        <a class="imagebutton" href="/event/" id="small-img">
-                                            <img src="../static/img/qut.jpg" class="img-fluid"/>
+                                        <a class="imagebutton" href="/event/{{categories.id}}" id="small-img">
+                                            <img src="../static/userimg{{catgories.image}}" class="img-fluid"/>
                                         </a>
                                     </div>
                                     <div class="col-xl-6 justify-content-sm-evenly">
-                                        <p class="titlefont"><b>QUT Coding Competition</b></p>
-                                        <p class="datefont">20/09/2022-23/09/2022</p>
-                                        <p class="locationfont">QUT Garden's Point Campus</p>
-                                        <p class="statusfont">Status: Open</p>
+                                        <p class="titlefont"><b>{{categories.event_name}}</b></p>
+                                        <p class="datefont">{{categories.date}}</p>
+                                        <p class="locationfont">{{categories.location}}</p>
+                                        <p class="statusfont">Status: {{categories.status}}</p>
                                     </div>
                                     <div class="col-3" id="button"> <br>
-                                        <a href="/event/"><button class="create-btn" type="button">Book Now</button></a>
+                                        <a href="/event/{{categories.id}}"><button class="create-btn" type="button">Book Now</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -37,6 +38,7 @@
                 </div>
             </div>
         </div> <br>
+        {% endfor %}
     </div>
 </body>
 
