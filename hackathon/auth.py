@@ -50,11 +50,7 @@ def login():
 def userpage(username):
     user = current_user  # Get the current user
     user = User.query.filter_by(username=user.username).first()
-    bookings = Booking.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()
     events = Event.query.filter_by(user_id=user.id).order_by(asc(Event.date)).all()
-    event_name = Event.query.get(event_name)
-    status = Event.query.get(status)
-    image = Event.query.get(image)
     if events is None:
         events = []
     return render_template('userpage.html', user=user, events=events, bookings=bookings, event_name=event_name, status=status)

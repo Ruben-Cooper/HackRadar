@@ -22,7 +22,6 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['TRAP_HTTP_EXCEPTIONS'] = True
-    app.config['UPLOAD_FOLDER'] = 'static\\userimg'
     # from .views import page_not_found
     # app.register_error_handler(Exception, page_not_found)
 

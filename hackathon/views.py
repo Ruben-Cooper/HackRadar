@@ -2,11 +2,13 @@ from .forms import RegisterForm, CreateEventForm, LoginForm, BookEventForm, Comm
 from flask import Flask, render_template, request, redirect, url_for, abort, Blueprint, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, login_required, logout_user
+from datetime import datetime
 from . import db
-from .models import User, Event
+from .models import User, Event, Comment
 from werkzeug.utils import secure_filename
-import os
 from sqlalchemy import desc, asc
+import os
+
 
 bp = Blueprint('main', __name__)
 
@@ -21,9 +23,10 @@ def allowed_file(filename):
 
 @bp.route('/')
 def index():
-    print(request.headers)
-    print(request.args.get('name'))
-    return render_template('base.html')
+    firstevent = firstevent = Event.query.order_by(asc(Event.date)).first()
+    secondevent = Event.query.order_by(asc(Event.date)).offset(1).first()
+
+    return render_template('base.html', firstevent=firstevent, secondevent=secondevent)
 
 
 @bp.route('/create_event', methods=['GET', 'POST'])
@@ -53,13 +56,31 @@ def create_event():
     return render_template('create_event.html', form=form)
 
 
-@bp.route('/event/', methods=['GET', 'POST'])
-def event_details():
-    bookform = BookEventForm()
-    commentform = CommentForm()
-    if bookform.validate_on_submit():
-        print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
-    return render_template('view_event.html', bookingform=bookform, commentforms=commentform)
+@bp.route('/event/<int:event_id>', methods=['GET', 'POST'])
+def event(event_id):
+    commentforms = CommentForm()
+    bookingform = BookEventForm()
+    event = Event.query.get(event_id)
+    comments = Comment.query.filter_by(event_id=event_id).all()
+
+    if event is None:
+        abort(404)
+    if request.method == 'POST':
+        comment = commentforms.comment.data
+        new_comment = Comment(
+            comment=comment, event_id=event_id, user_id=current_user.id, username=current_user.username, date=datetime.date.today())
+        db.session.add(new_comment)
+        db.session.commit()
+        return url_for('main.index')
+    return render_template('view_event.html', comments=comments, event=event, commentforms=commentforms, bookingform=bookingform)
+
+
+# @bp.route('/event', methods=['GET', 'POST'])
+# def event_details():
+#     bookform = BookEventForm()
+#     if bookform.validate_on_submit():
+#         print(f"Ticket Quantity: {bookform.ticket_quantity.data}")
+#     return render_template('view_event.html', bookingform=bookform, commentforms=commentform)
 
 
 @bp.route('/category/businesscase')  # this one
@@ -76,7 +97,9 @@ def business_prop():
 
 @bp.route('/category/codingcompetition')
 def coding_competition():
-    return render_template('cate_codingcomp.html')
+    category = Event.query.filter_by(
+        category='Coding Competition').order_by(asc(Event.date)).all()
+    return render_template('cate_codingcomp.html', category=category)
 
 
 @bp.route('/category/Datathon')
@@ -109,21 +132,21 @@ def seminar():
     return render_template('cate_seminar.html', category=category)  
 
 
-@bp.errorhandler(400)
-def page_not_found(e):
-    return render_template('error.html'), 404
+# @bp.errorhandler(400)
+# def page_not_found(e):
+#     return render_template('error.html'), 404
 
 
-@bp.errorhandler(500)
-def internal_server_error(e):
-    return render_template('error.html'), 500
+# @bp.errorhandler(500)
+# def internal_server_error(e):
+#     return render_template('error.html'), 500
 
 
-@bp.errorhandler(403)
-def forbidden(e):
-    return render_template('error.html'), 403
+# @bp.errorhandler(403)
+# def forbidden(e):
+#     return render_template('error.html'), 403
 
 
-@bp.errorhandler(410)
-def gone(e):
-    return render_template('error.html'), 410
+# @bp.errorhandler(410)
+# def gone(e):
+#     return render_template('error.html'), 410

@@ -37,7 +37,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     event_name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
-    date = db.Column(db.DateTime, nullable=False)
+    date = db.Column(db.Date, nullable=False)
     online = db.Column(db.String, nullable=False)
     location = db.Column(db.String(200), nullable=False)
     category = db.Column(db.String(50), nullable=False)
@@ -55,7 +55,6 @@ class Booking(db.Model):
     tickets = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime, db.ForeignKey('event.id'), nullable=False)
-    time = db.Column(db.DateTime, db.ForeignKey('event.id'), nullable=False)
 
 
 class Comment(db.Model):
@@ -67,4 +66,3 @@ class Comment(db.Model):
                          nullable=False)
     comment = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime, db.ForeignKey('event.id'), nullable=False)
-    time = db.Column(db.DateTime, db.ForeignKey('event.id'), nullable=False)

@@ -186,7 +186,8 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.centered h3{
+
+.centered h3 {
     font-size: 15px;
 }
 
@@ -224,7 +225,7 @@ h3 {
     max-width: 900px;
 }
 
-#my_account h3{
+#my_account h3 {
     text-align: center;
     text-decoration: underline solid 2px #da8300;
 }
@@ -526,42 +527,42 @@ div.form-group {
     background-color: #454a4f;
 }
 
-#small-img img{
+#small-img img {
     max-width: 150px;
     border: 1px solid #222222;
     border-radius: 5px;
     max-height: 150px;
 }
 
-#categorytitle h1{
+#categorytitle h1 {
     color: rgb(255, 255, 255);
 }
 
-.titlefont{
+.titlefont {
     font-size: 20px;
     font-weight: bold;
     color: #da8300;
     margin-bottom: 0;
 }
 
-.datefont{
+.datefont {
     font-size: 15px;
     margin-bottom: 0;
 }
 
-.locationfont{
+.locationfont {
     font-size: 15px;
     margin-bottom: 0;
 }
 
-.statusfont{
+.statusfont {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 0;
 }
 
 
-#button .create-btn{
+#button .create-btn {
     background-color: transparent;
     color: #da8300;
     border: 1px solid #da8300;

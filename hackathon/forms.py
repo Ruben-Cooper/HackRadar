@@ -71,8 +71,8 @@ class CreateEventForm(FlaskForm):
 
 
 class BookEventForm(FlaskForm):
-    ticket_quantity = SelectField("Ticket Quantity", validators=[
-        InputRequired("Please Enter Ticket Quantity")], choices=ticket_categories)
+    ticket_quantity = IntegerField("Ticket Quantity", validators=[
+        InputRequired("Please Enter Ticket Quantity")])
     submit = SubmitField("Book Event")
 
 

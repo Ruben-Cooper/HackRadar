@@ -11,8 +11,8 @@
         <!-- Booking History -->
         <div class="container" id="my_account">
             <br>
-            <h2 style="text-align: center; border-bottom: #da8300 2px solid; max-width: 30%;">Booking History</h2>
-            <h3>Hello {{current_user.username}}! Here is a list of your booked events.</h3>
+            <h3>Hello {{current_user.username}}! Welcome to your accounts page.</h3><hr class="rounded">
+            <h3>Booking History</h3>
             <br>
             
             <div class="row">
@@ -67,15 +67,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for event in events %}`
+                            {% for event in events %}
                             <tr>
-                                <th scope="row"><img src="../static/userimg{{event.image}}" alt="placeholder" width="180"
+                                <th scope="row"><img src="/static/userimg/{{event.image}}" alt="placeholder" width="180"
                                         height="100"></th>
                                 <td>{{event.event_name}}</td>
                                 <td>{{event.date}}</td>
                                 <td>{{event.id}}</td>
-                                <td>${{event.price}}</td>
-                                <td>{{event.status}}</td>
+                                <td>{{event.price}}</td>
+                                <td>Booked</td>
                                 <td><button class="btn btn-primary create-btn">Edit</button></td>
                             </tr>
                             {% endfor %}

@@ -1,13 +1,13 @@
 {% extends "header.html"%}
 {% block header %}
- <!-- Main Body Section -->
+<!-- Main Body Section -->
 
- <body style="height:2000px; background-color:#454a4f">
+<body style="height:2000px; background-color:#454a4f">
     <!-- Make a Carousel -->
     <div id="myCarousel" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
@@ -20,9 +20,6 @@
                     <p>Want to participate in something cooler than the Melbourne Cup? Well you are at the right
                         place,
                         see the hundreds of Hackathons hosted by our community.</p>
-                    <a data-bs-toggle="modal" data-bs-target="#EventModal" href="#" class="btn btn-lg btn-primary">
-                        Upcoming Melbourne Hackathons
-                    </a>
                 </div>
             </div>
             <!-- Second Carousel Item-->
@@ -33,9 +30,6 @@
                     <p>Check out our Brisbane Community-Run Hackathon's. Learn and participate in events ranging
                         from
                         making simple web applications to building the next Windows operating system.</p>
-                    <a data-bs-toggle="modal" data-bs-target="#EventModal" href="#" class="btn btn-lg btn-primary">
-                        Upcoming Brisbane Hackathons
-                    </a>
                 </div>
             </div>
             <!-- Third Carousel Item -->
@@ -46,9 +40,6 @@
                     <p>With community organisers now in Sydney, we are planning to bring Hackathons into the most
                         populus city in Australia. Get ready to Hack On!</p>
 
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#EventModal" class="btn btn-lg btn-primary">
-                        Upcoming Sydney Hackathons
-                    </a>
                 </div>
             </div>
 
@@ -70,147 +61,112 @@
             <div class="image-column">
                 <div class="text-over-image image-links">
                     <a href="/category/codingcompetition">
-                    <img src="../static/img/coding_comp.jpg" />
-                    <div class="centered">
+                        <img src="../static/img/coding_comp.jpg" />
+                        <div class="centered">
                             <h3>Coding Compeition</h3>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="text-over-image image-links">
-                    <a href="/category/robotics">
+            </div>
+            <div class="text-over-image image-links">
+                <a href="/category/robotics">
                     <img src="../static/img/robotics.jpg" />
                     <div class="centered">
-                            <h3>Robotics</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-column">
-                <div class="text-over-image image-links">
-                    <a href="/category/datathon">
-                    <img src="../static/img/data.jpg"/>
-                    <div class="centered">
-                            <h3>Datathon</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="text-over-image image-links">
-                    <a href="/category/ideapitch">
-                    <img src="../static/img/presentation.jpg">
-                    <div class="centered">
-                            <h3>Idea Pitch</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-column">
-                <div class="text-over-image image-links">
-                    <a href="/category/hackathon">
-                    <img src="../static/img/online.jpg"/>
-                    <div class="centered">
-                            <h3>Hackathon</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="text-over-image image-links">
-                    <a href="/category/businessprop">
-                    <img src="../static/img/business.jpg" />
-                    <div class="centered">
-                            <h3>Business Proposal</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-column">
-                <div class="text-over-image image-links">
-                    <a href="/category/businesscase">
-                    <img src="../static/img/business_case.jpg"/>
-                    <div class="centered">
-                            <h3>Business Case Competition</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="text-over-image image-links">
-                    <a href="/category/seminar">
-                    <img src="../static/img/seminar.jpg" />
-                    <div class="centered">
-                            <h3>Seminars</h3>
-                        </a>
-                    </div>
-                </div>
+                        <h3>Robotics</h3>
+                </a>
             </div>
         </div>
+    </div>
+    <div class="image-column">
+        <div class="text-over-image image-links">
+            <a href="/category/datathon">
+                <img src="../static/img/data.jpg" />
+                <div class="centered">
+                    <h3>Datathon</h3>
+            </a>
+        </div>
+    </div>
+    <div class="text-over-image image-links">
+        <a href="/category/ideapitch">
+            <img src="../static/img/presentation.jpg">
+            <div class="centered">
+                <h3>Idea Pitch</h3>
+        </a>
+    </div>
+    </div>
+    </div>
+    <div class="image-column">
+        <div class="text-over-image image-links">
+            <a href="/category/hackathon">
+                <img src="../static/img/online.jpg" />
+                <div class="centered">
+                    <h3>Hackathon</h3>
+            </a>
+        </div>
+    </div>
+    <div class="text-over-image image-links">
+        <a href="/category/businessprop">
+            <img src="../static/img/business.jpg" />
+            <div class="centered">
+                <h3>Business Proposal</h3>
+        </a>
+    </div>
+    </div>
+    </div>
+    <div class="image-column">
+        <div class="text-over-image image-links">
+            <a href="/category/businesscase">
+                <img src="../static/img/business_case.jpg" />
+                <div class="centered">
+                    <h3>Business Case Competition</h3>
+            </a>
+        </div>
+    </div>
+    <div class="text-over-image image-links">
+        <a href="/category/seminar">
+            <img src="../static/img/seminar.jpg" />
+            <div class="centered">
+                <h3>Seminars</h3>
+        </a>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 
     <h1 class="mt-4 mb-4">Upcoming Events</h1>
     <div class="container">
         <div class="row justify-content-between" id="UpcomingEvent">
+
             <div class="col-xl-6">
-                <div class="overlay-image"><a class="navbar-brand" href="/event">
-                    <button id="close-image" class="btn"><img src="../static/img/qut.jpg">
-                    <div class="hover">
-                        <div class="info">
-                            <p>QUT Coding Compeition</p>
-                            <p>Location: QUT Garden's Point Campus</p>
-                            <p>Status: Open</p>
-                        </div>
-                    </div>
-                </button></a></div>
+                <div class="overlay-image"><a class="navbar-brand" href="/event/{{firstevent.id}}">
+                        <button id="close-image" class="btn"><img src="../static/userimg/{{firstevent.image}}">
+                            <div class="hover">
+                                <div class="info">
+                                    <p>Name: {{firstevent.event_name}}</p>
+                                    <p>Location: {{firstevent.location}}</p>
+                                    <p>Date: {{(firstevent.date)}}</p>
+                                    <p>Status: {{firstevent.status}}</p>
+                                </div>
+                            </div>
+                        </button></a></div>
             </div>
             <div class="col-xl-6">
-                <div class="overlay-image"><a class="navbar-brand" href="/event">
-                    <button id="close-image" class="btn"><img src="../static/img/qut.jpg">
-                    <div class="hover">
-                        <div class="info">
-                            <p>QUT Coding Compeition</p>
-                            <p>Location: QUT Garden's Point Campus</p>
-                            <p>Status: Open</p>
-                        </div>
-                    </div>
-                </button></a></div>
+                <div class="overlay-image"><a class="navbar-brand" href="/event/{{secondevent.id}}">
+                        <button id="close-image" class="btn"><img src="../static/userimg/{{secondevent.image}}">
+                            <div class="hover">
+                                <div class="info">
+                                    <p>Name: {{secondevent.event_name}}</p>
+                                    <p>Location: {{secondevent.location}}</p>
+                                    <p>Date: {{secondevent.date}}</p>
+                                    <p>Status: {{secondevent.status}}</p>
+                                </div>
+                            </div>
+                        </button></a></div>
+
             </div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="EventModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EventModalLabel">Coding Compeitions</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3 id="title">QUT Coding Competition</h3>
-                    <p>Hosted at QUT's Garden Point Campus.</p>
-                    <button type="button" class="btn btn-warning">Upcoming</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">UQ Coding Competition</h3>
-                    <p>Hosted at UQ's St Lucia. Campus.</p>
-                    <button type="button" class="btn btn-danger">Cancelled</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">AI Platformer Coding Compeition</h3>
-                    <p> Make a simple platformer game based on a set AI Model.</p>
-                    <button type="button" class="btn btn-success">Booked</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                    <hr>
-                    <h3 id="title">Mechatronics Coding Compeition</h3>
-                    <p>Work with a team of four to develop a machine learning algortihm for production robots.</p>
-                    <button type="button" class="btn btn-secondary">Inactive</button>
-                    <a href="booking.html"><button type="button" class="btn btn-primary">Select</button></a>
-                </div>
-                <div class="modal-footer">
-                    <a href="booking.html"><button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">View
-                            More</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 {% endblock %}
-
-   

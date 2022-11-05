@@ -1,176 +1,118 @@
 {% extends "header.html"%}
 {% block header %}
- <!-- Main Body Section -->
+<!-- Main Body Section -->
 
- <body style="background-color:#454a4f">
+<body style="background-color:#454a4f">
     <!-- Start of Event Info -->
     <div class="container py-5" id="event">
         <div class="row">
             <div class="event-info-section">
-                <h1 class="mt-4 mb-4">QUT Coding Compeition</h1>
-                <img src="../static/img/qut.jpg" class="img-qut img-fluid"/>
-                <p class="fs-4"><strong>Location: QUT Garden's Point Campus</strong></p>
-                <p class="fs-4">Attend QUT's Coding Compeition where you and a group of four will spend
-                    three nights coding a better alternative to blackboard. Anyone attending the event will recieve pizza
-                    and unlimited drinks!</p>
+                <h1 class="mt-4 mb-4">{{event.event_name}}</h1>
+                <img style="width:75%; margin-left:auto; margin-right: auto;" src="../static/userimg/{{event.image}}"
+                    class="img-qut img-fluid" />
+                <p class="fs-4"><strong>Location: {{event.location}}</strong></p>
+                <p class="fs-4">{{event.description}}</p>
                 <p class="fs-4"><strong>Event Date:</strong><br>
-                    20/09/2022-23/09/2022</p>
+                    {{event.date}}</p>
                 <p class="fs-4"><strong>Avaliable Tickets:</strong>
-                    120</p>
+                    {{event.tickets_amt}}</p>
                 <p class="fs-4"><strong>Price:</strong>
-                $12.10</p>
-                <p class="fs-4"><strong>Status:</strong>
-                    Open</p>
+                    ${{event.price}}</p>
 
                 <button data-bs-toggle="modal" data-bs-target="#BookModal" href="#" class="book-btn">Book Now</button>
             </div>
 
             <!-- Comment Section -->
-     <div class="container py-5" id="event-comments" align="center">
-        <h3 class="fw-bold">Comments</h3>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-8 col-lg-12">
-                <div class="card shadow-0 border">
-                    <div class="card-body p-4">
-                        <div class="form-outline mb-4">
-                            {{commentforms.comment(class="form-control", placeholder ="Enter Comment")}}
-                            <br>
-                            {{ commentforms.commentsubmit(class="book-btn") }}
-                        </div>
-
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <p>Went here last year, it was pretty cool!</p>
-
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">User: Martha</p>
+            <div class="container py-5" id="event-comments" align="center">
+                <h3 class="fw-bold">Comments</h3>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-12">
+                        <div class="card shadow-0 border">
+                            <div class="card-body p-4">
+                                <form method="Post">
+                                    <div class="form-outline mb-4">
+                                        {{commentforms.comment(class="form-control", placeholder ="Enter Comment")}}
+                                        <br>
+                                        {{ commentforms.commentsubmit(class="book-btn") }}
                                     </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">Date: 10/11/2022</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <p>I only go because there is pizza.</p>
-
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">User: Johny</p>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">Date: 10/11/2022</p>
+                                </form>
+                                {% for comment in comments %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p>{{comment.comment}}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small mb-0 ms-1">User: {{comment.username}}</p>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small mb-0 ms-1">Date: {{comment.date}}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                {% endfor %}
 
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <p>Don't go! They tell you to code</p>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">User: Mary Kate</p>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">Date: 10/11/2022</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Cool!</p>
-
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">User: Johny</p>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <p class="small mb-0 ms-1">Date: 10/11/2022</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="BookModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EventModalLabel">QUT Coding Compeition</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" align="center">
-                    <div class="row">
-                        <div class="col-12">
-                            <img src="../static/img/qut.jpg" class="img-fluid" alt="QUT Coding Compeition">
-                        </div> 
-                    </div> <br>
-                    <div class="row justify-content-center">
-                        <div class="col-12 divider">
-                            <p><strong>Event Date:</strong><br>
-                                20/09/2022-23/09/2022</p>
+            <!-- Modal -->
+            <div class="modal fade" id="BookModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="EventModalLabel">{{event.event_name}}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    </div> <br>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6 icons">
-                            <p><strong>Avaliable Tickets:</strong> <br>
-                                120</p>
+                        <div class="modal-body" align="center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <img src="../static/userimg/{{event.image}}" class="img-fluid"
+                                        alt="{{event.event_name}}">
+                                </div>
+                            </div> <br>
+                            <div class="row justify-content-center">
+                                <div class="col-12 divider">
+                                    <p><strong>Event Date:</strong><br>
+                                        {{event.date}}</p>
+                                </div>
+                            </div> <br>
+                            <div class="row justify-content-evenly">
+                                <div class="col-6 icons">
+                                    <p><strong>Avaliable Tickets:</strong> <br>
+                                        {{event.tickets_amt}}</p>
+                                </div>
+                                <div class="col-6 icons">
+                                    <p><strong>Price:</strong><br>
+                                        ${{event.price}}</p>
+                                </div>
+                            </div> <br>
+                            <div class="row justify-content-evenly">
+                                <div class="col-6 icons">
+                                    <p><strong>Location:</strong> <br>
+                                        {{event.location}}</p>
+                                </div>
+                                <div class="col-6 icons">
+                                    <p><strong>Event Category:</strong> <br>
+                                        {{event.category}}</p>
+                                </div>
+                            </div> <br>
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        {{ bookingform.ticket_quantity.label }}
+                                        {{ bookingform.ticket_quantity(class="form-control", min="1", max=event.tickets_amt, placeholder = "Please Enter Ticket Quantity")}}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 icons">
-                            <p><strong>Price:</strong><br>
-                            $12.10</p>
+                        <div class="modal-footer">
+                            {{bookingform.submit(class="book-btn")}}
                         </div>
-                    </div> <br>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6 icons">
-                            <p><strong>Location:</strong> <br>
-                            QUT Garden's Point Campus</p>
-                        </div>
-                        <div class="col-6 icons">
-                            <p><strong>Event Category:</strong> <br>
-                            Hackathon</p>
-                        </div>
-                    </div> <br>
-                    <div class="row justify-content-center">
-                        <div class="col-12 divider">
-                            <p><strong>Status:</strong><br>
-                                Open</p>
-                        </div>
-                    </div> <br>
-                    <div class="row justify-content-center">
-                        <div class="col-6">
-                            <div class="form-group">
-                                {{ bookingform.ticket_quantity.label }}
-                                {{ bookingform.ticket_quantity(class="form-control", placeholder ="Please Enter Ticket Quantity")}}
-                            </div> 
-                        </div> 
-                        <div class="col-6">
-                            <div class="form-group">
-                                <br>
-                                <p><b>Total:</b> $</p>
-                            </div> 
-                        </div> 
-                        <p style="text-align: left;">*note: tickets are limited to 10 per user</p>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    {{bookingform.submit(class="book-btn")}}
-                </div>
             </div>
-        </div>
-    </div>
 </body>
 {% endblock %}
-
-   
