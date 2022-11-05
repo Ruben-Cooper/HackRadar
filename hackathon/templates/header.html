@@ -57,7 +57,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             {% if current_user.is_authenticated %}
-                            <li><a href="{{ url_for('main.booking_history') }}" class="dropdown-item">My Account</a>
+                            <li><a href="{{ url_for('auth.userpage', username=current_user.username) }}"
+                                    class="dropdown-item">My Account</a>
                             </li>
                             {% endif %}
                             {% if current_user.is_anonymous %}
