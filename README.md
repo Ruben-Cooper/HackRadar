@@ -1,26 +1,24 @@
-![](https://raw.githubusercontent.com/Ruben-Cooper/IAB207/main/hackathon/static/img/favicon.png?token=GHSAT0AAAAAAB2KHVHKED2PHKIX2YQMNFE2Y3FXD2A)
-# Hackathon Web Application
 
-Built for IAB207 Assessment Task 3
+# 🚀 HackRadar: Discover & Share Hackathon Events
 
+HackRadar is a web application developed for the IAB207 Assessment Task 3 at QUT. It allows users to discover upcoming hackathon events and share their own events with the community.
 
+## Contributors
 
-
-## Heroku Web Application
-[iab207-deploy](https://iab207-deploy.herokuapp.com/)
-
-
-## 🚀 Contributers
-Ruben, Gustavo, Braydon
-
+-   Ruben
+    
+-   Gustavo
+    
+-   Braydon
+    
 
 ## Dependencies
 
-Built Using Flask, SQLAlchemy and Bootstrap.
+Built Using Flask, SQLAlchemy, and Bootstrap.
 
-```bash
-# Installed using pip install
--------------------------------
+### Installed using pip install
+
+```
 Bootstrap-Flask==2.1.0
 click==8.1.3
 dnspython==2.2.1
@@ -39,8 +37,55 @@ SQLAlchemy==1.4.40
 Werkzeug==2.2.2
 WTForms==3.0.1
 zipp==3.8.1
-
-# we also need webserver (refered to in heroku Procfile)
 gunicorn==20.1.0
-
 ```
+
+## Features
+
+-   **Event Discovery:** Browse and search for hackathon events.
+    
+-   **Event Details:** View detailed information about each event.
+    
+-   **User Submissions:** Users can upload their own hackathon events.
+    
+-   **User Authentication:** Secure login and registration for users.
+    
+
+## Deployment
+
+Deploy the application on Heroku using the included Procfile with `gunicorn`:
+
+1.  Create a new Heroku app:
+    
+    bash
+    
+    ```
+    heroku create your-app-name
+    ```
+    
+2.  Push the code to Heroku:
+    
+    bash
+    
+    ```
+    git push heroku main
+    ```
+    
+3.  Scale the application:
+    
+    bash
+    
+    ```
+    heroku ps:scale web=1
+    ```
+    
+
+## Usage
+
+1.  Register or log in to your account.
+    
+2.  Browse through the list of hackathon events or use the search function to find specific events.
+    
+3.  Click on an event to view its details.
+    
+4.  Upload your own hackathon events or post comments on existing ones if you're a registered user.
